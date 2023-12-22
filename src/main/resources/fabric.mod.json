@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "immersivecurrency",
+	"version": "${version}",
+	"name": "Immersive Currency",
+	"description": "Coins intended to be used as a currency between players!",
+	"authors": [
+		"DistandDig",
+		"Kekie6"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/immersivecurrency/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.distantdig.immersivecurrency.ImmersiveCurrency"
+		],
+		"fabric-datagen": [
+			"net.distantdig.immersivecurrency.ImmersiveCurrencyDataGenerator"
+		]
+	},
+	"mixins": [
+		"immersivecurrency.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.3",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
