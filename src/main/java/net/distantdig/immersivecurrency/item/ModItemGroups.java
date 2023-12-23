@@ -18,6 +18,11 @@ public class ModItemGroups {
                         entries.add(ModItems.GOLD_COIN);
                         entries.add(ModItems.IRON_COIN);
                         entries.add(ModItems.PLATINUM_COIN);
+
+                        entries.add(ModItems.PURE_COPPER_INGOT);
+                        entries.add(ModItems.PURE_IRON_INGOT);
+                        entries.add(ModItems.PURE_GOLD_INGOT);
+                        entries.add(ModItems.PURE_PLATINUM_INGOT);
                     })).build());
 
     public static void registerItemGroups() {

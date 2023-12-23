@@ -17,11 +17,21 @@ public class ModItems {
     public static final Item GOLD_COIN = registerItem("gold_coin", new Item(new FabricItemSettings()));
     public static final Item PLATINUM_COIN = registerItem("platinum_coin", new Item(new FabricItemSettings()));
 
+    public static final Item PURE_COPPER_INGOT = registerItem("pure_copper_ingot", new Item(new FabricItemSettings()));
+    public static final Item PURE_IRON_INGOT = registerItem("pure_iron_ingot", new Item(new FabricItemSettings()));
+    public static final Item PURE_GOLD_INGOT = registerItem("pure_gold_ingot", new Item(new FabricItemSettings()));
+    public static final Item PURE_PLATINUM_INGOT = registerItem("pure_platinum_ingot", new Item(new FabricItemSettings()));
+
     private static void addItemsToItemGroup(FabricItemGroupEntries entries) {
         entries.add(COPPER_COIN);
         entries.add(IRON_COIN);
         entries.add(GOLD_COIN);
         entries.add(PLATINUM_COIN);
+
+        entries.add(PURE_COPPER_INGOT);
+        entries.add(PURE_IRON_INGOT);
+        entries.add(PURE_GOLD_INGOT);
+        entries.add(PURE_PLATINUM_INGOT);
     }
 
     private static Item registerItem(String name, Item item) {
