@@ -1,0 +1,8 @@
+{
+  "item.immersive_currency.copper_coin": "Copper Coin",
+  "item.immersive_currency.iron_coin": "Iron Coin",
+  "item.immersive_currency.gold_coin": "Gold Coin",
+  "item.immersive_currency.platinum_coin": "Platinum Coin",
+
+  "itemGroup.immersive_coins_group": "Immersive Coins"
+}
