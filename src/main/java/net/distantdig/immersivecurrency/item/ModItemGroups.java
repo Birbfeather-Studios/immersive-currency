@@ -1,6 +1,7 @@
 package net.distantdig.immersivecurrency.item;
 
 import net.distantdig.immersivecurrency.ImmersiveCurrency;
+import net.distantdig.immersivecurrency.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -23,6 +24,11 @@ public class ModItemGroups {
                         entries.add(ModItems.PURE_IRON_INGOT);
                         entries.add(ModItems.PURE_GOLD_INGOT);
                         entries.add(ModItems.PURE_PLATINUM_INGOT);
+
+                        entries.add(ModBlocks.PURE_COPPER_ORE);
+                        entries.add(ModBlocks.PURE_IRON_ORE);
+                        entries.add(ModBlocks.PURE_GOLD_ORE);
+                        entries.add(ModBlocks.PURE_PLATINUM_ORE);
                     })).build());
 
     public static void registerItemGroups() {

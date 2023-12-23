@@ -9,5 +9,10 @@
   "item.immersive_currency.pure_gold_ingot": "Pure Gold Ingot",
   "item.immersive_currency.pure_platinum_ingot": "Pure Platinum Ingot",
 
+  "block.immersive_currency.pure_copper_ore": "Pure Copper Ore",
+  "block.immersive_currency.pure_iron_ore": "Pure Iron Ore",
+  "block.immersive_currency.pure_gold_ore": "Pure Gold Ore",
+  "block.immersive_currency.pure_platinum_ore": "Pure Platinum Ore",
+
   "itemGroup.immersive_coins_group": "Immersive Coins"
 }

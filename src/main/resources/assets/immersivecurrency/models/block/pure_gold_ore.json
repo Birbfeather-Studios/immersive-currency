@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "immersive_currency:block/pure_gold_ore"
+  }
+}
