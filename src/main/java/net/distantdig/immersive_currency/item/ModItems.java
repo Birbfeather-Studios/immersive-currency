@@ -1,6 +1,6 @@
-package net.distantdig.immersivecurrency.item;
+package net.distantdig.immersive_currency.item;
 
-import net.distantdig.immersivecurrency.ImmersiveCurrency;
+import net.distantdig.immersive_currency.ImmersiveCurrency;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;

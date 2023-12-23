@@ -1,7 +1,7 @@
-package net.distantdig.immersivecurrency.item;
+package net.distantdig.immersive_currency.item;
 
-import net.distantdig.immersivecurrency.ImmersiveCurrency;
-import net.distantdig.immersivecurrency.block.ModBlocks;
+import net.distantdig.immersive_currency.ImmersiveCurrency;
+import net.distantdig.immersive_currency.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
