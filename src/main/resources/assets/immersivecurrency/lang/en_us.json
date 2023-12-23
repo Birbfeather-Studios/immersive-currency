@@ -1,0 +1,23 @@
+{
+  "item.immersive_currency.copper_coin": "Copper Coin",
+  "item.immersive_currency.iron_coin": "Iron Coin",
+  "item.immersive_currency.gold_coin": "Gold Coin",
+  "item.immersive_currency.platinum_coin": "Platinum Coin",
+
+  "item.immersive_currency.pure_copper_ingot": "Pure Copper Ingot",
+  "item.immersive_currency.pure_iron_ingot": "Pure Iron Ingot",
+  "item.immersive_currency.pure_gold_ingot": "Pure Gold Ingot",
+  "item.immersive_currency.pure_platinum_ingot": "Pure Platinum Ingot",
+
+  "item.immersive_currency.pure_copper_nugget": "Pure Copper Nugget",
+  "item.immersive_currency.pure_iron_nugget": "Pure Iron Nugget",
+  "item.immersive_currency.pure_gold_nugget": "Pure Gold Nugget",
+  "item.immersive_currency.pure_platinum_nugget": "Pure Platinum Nugget",
+
+  "block.immersive_currency.pure_copper_ore": "Pure Copper Ore",
+  "block.immersive_currency.pure_iron_ore": "Pure Iron Ore",
+  "block.immersive_currency.pure_gold_ore": "Pure Gold Ore",
+  "block.immersive_currency.pure_platinum_ore": "Pure Platinum Ore",
+
+  "itemGroup.immersive_coins_group": "Immersive Coins"
+}
