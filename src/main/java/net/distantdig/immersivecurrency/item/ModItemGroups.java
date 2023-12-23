@@ -25,6 +25,11 @@ public class ModItemGroups {
                         entries.add(ModItems.PURE_GOLD_INGOT);
                         entries.add(ModItems.PURE_PLATINUM_INGOT);
 
+                        entries.add(ModItems.PURE_COPPER_NUGGET);
+                        entries.add(ModItems.PURE_IRON_NUGGET);
+                        entries.add(ModItems.PURE_GOLD_NUGGET);
+                        entries.add(ModItems.PURE_PLATINUM_NUGGET);
+
                         entries.add(ModBlocks.PURE_COPPER_ORE);
                         entries.add(ModBlocks.PURE_IRON_ORE);
                         entries.add(ModBlocks.PURE_GOLD_ORE);
