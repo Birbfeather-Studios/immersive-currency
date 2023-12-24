@@ -14,6 +14,10 @@
   "item.immersive_currency.pure_gold_nugget": "Pure Gold Nugget",
   "item.immersive_currency.pure_platinum_nugget": "Pure Platinum Nugget",
 
+  "item.immersive_currency.large_emerald": "Large Emerald",
+  "item.immersive_currency.emerald_chunk": "Emerald Chunk",
+  "item.immersive_currency.emerald_shard": "Emerald Shard",
+
   "block.immersive_currency.pure_copper_ore": "Pure Copper Ore",
   "block.immersive_currency.pure_iron_ore": "Pure Iron Ore",
   "block.immersive_currency.pure_gold_ore": "Pure Gold Ore",

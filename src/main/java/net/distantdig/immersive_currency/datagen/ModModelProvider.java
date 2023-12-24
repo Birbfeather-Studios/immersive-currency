@@ -37,5 +37,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PURE_IRON_NUGGET, Models.GENERATED);
         itemModelGenerator.register(ModItems.PURE_GOLD_NUGGET, Models.GENERATED);
         itemModelGenerator.register(ModItems.PURE_PLATINUM_NUGGET, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.LARGE_EMERALD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.EMERALD_CHUNK, Models.GENERATED);
+        itemModelGenerator.register(ModItems.EMERALD_SHARD, Models.GENERATED);
     }
 }

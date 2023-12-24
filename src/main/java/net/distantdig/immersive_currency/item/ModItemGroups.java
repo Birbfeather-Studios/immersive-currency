@@ -5,6 +5,7 @@ import net.distantdig.immersive_currency.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -29,6 +30,11 @@ public class ModItemGroups {
                         entries.add(ModItems.PURE_IRON_NUGGET);
                         entries.add(ModItems.PURE_GOLD_NUGGET);
                         entries.add(ModItems.PURE_PLATINUM_NUGGET);
+
+                        entries.add(ModItems.LARGE_EMERALD);
+                        entries.add(Items.EMERALD);
+                        entries.add(ModItems.EMERALD_CHUNK);
+                        entries.add(ModItems.EMERALD_SHARD);
 
                         entries.add(ModBlocks.PURE_COPPER_ORE);
                         entries.add(ModBlocks.PURE_IRON_ORE);

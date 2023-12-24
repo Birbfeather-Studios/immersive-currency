@@ -27,6 +27,10 @@ public class ModItems {
     public static final Item PURE_GOLD_NUGGET = registerItem("pure_gold_nugget", new Item(new FabricItemSettings()));
     public static final Item PURE_PLATINUM_NUGGET = registerItem("pure_platinum_nugget", new Item(new FabricItemSettings()));
 
+    public static final Item LARGE_EMERALD = registerItem("large_emerald", new Item(new FabricItemSettings()));
+    public static final Item EMERALD_CHUNK = registerItem("emerald_chunk", new Item(new FabricItemSettings()));
+    public static final Item EMERALD_SHARD = registerItem("emerald_shard", new Item(new FabricItemSettings()));
+
     private static void addItemsToItemGroup(FabricItemGroupEntries entries) {
         entries.add(COPPER_COIN);
         entries.add(IRON_COIN);
@@ -42,6 +46,10 @@ public class ModItems {
         entries.add(PURE_IRON_NUGGET);
         entries.add(PURE_GOLD_NUGGET);
         entries.add(PURE_PLATINUM_NUGGET);
+
+        entries.add(LARGE_EMERALD);
+        entries.add(EMERALD_CHUNK);
+        entries.add(EMERALD_SHARD);
     }
 
     private static Item registerItem(String name, Item item) {

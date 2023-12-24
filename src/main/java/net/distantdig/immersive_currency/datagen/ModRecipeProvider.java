@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -29,6 +30,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             ModBlocks.PURE_PLATINUM_ORE
     );
 
+    private static void emeraldCompactingStep(Item larger, Item smaller, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, larger, 1)
+                .pattern("NNN")
+                .pattern("N N")
+                .pattern("NNN")
+                .input('N', smaller)
+                .criterion(hasItem(smaller), conditionsFromItem(smaller))
+                .offerTo(exporter, new Identifier(getRecipeName(smaller) + "_to_" + getRecipeName(larger)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, smaller, 8)
+                .input(larger)
+                .criterion(hasItem(larger), conditionsFromItem(larger))
+                .offerTo(exporter, new Identifier(getRecipeName(larger) + "_to_" + getRecipeName(smaller)));
+    }
     private static void coinRecipeJsonBuilder(Item result, Item nugget, Item gem, Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, result, 1)
                 .pattern("NNN")
@@ -70,9 +85,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.PURE_GOLD_NUGGET, RecipeCategory.MISC, ModItems.PURE_GOLD_INGOT);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.PURE_PLATINUM_NUGGET, RecipeCategory.MISC, ModItems.PURE_PLATINUM_INGOT);
 
-        coinRecipeJsonBuilder(ModItems.COPPER_COIN, ModItems.PURE_COPPER_NUGGET, Items.EMERALD, exporter);
-        coinRecipeJsonBuilder(ModItems.IRON_COIN, ModItems.PURE_IRON_NUGGET, Items.EMERALD, exporter);
+        emeraldCompactingStep(ModItems.LARGE_EMERALD, Items.EMERALD,exporter);
+        emeraldCompactingStep(Items.EMERALD, ModItems.EMERALD_CHUNK,exporter);
+        emeraldCompactingStep(ModItems.EMERALD_CHUNK, ModItems.EMERALD_SHARD,exporter);
+
+        coinRecipeJsonBuilder(ModItems.COPPER_COIN, ModItems.PURE_COPPER_NUGGET, ModItems.EMERALD_SHARD, exporter);
+        coinRecipeJsonBuilder(ModItems.IRON_COIN, ModItems.PURE_IRON_NUGGET, ModItems.EMERALD_CHUNK, exporter);
         coinRecipeJsonBuilder(ModItems.GOLD_COIN, ModItems.PURE_GOLD_NUGGET, Items.EMERALD, exporter);
-        coinRecipeJsonBuilder(ModItems.PLATINUM_COIN, ModItems.PURE_PLATINUM_NUGGET, Items.EMERALD, exporter);
+        coinRecipeJsonBuilder(ModItems.PLATINUM_COIN, ModItems.PURE_PLATINUM_NUGGET, ModItems.LARGE_EMERALD, exporter);
     }
 }
