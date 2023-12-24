@@ -16,6 +16,8 @@ public class ModItemGroups {
             new Identifier(ImmersiveCurrency.MOD_ID, "immersive_coins_group"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.immersive_coins_group"))
                     .icon(() -> new ItemStack(ModItems.IRON_COIN)).entries(((displayContext, entries) -> {
+                        entries.add(ModItems.COIN_POUCH);
+
                         entries.add(ModItems.COPPER_COIN);
                         entries.add(ModItems.GOLD_COIN);
                         entries.add(ModItems.IRON_COIN);

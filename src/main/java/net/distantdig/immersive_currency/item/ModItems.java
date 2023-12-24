@@ -1,6 +1,7 @@
 package net.distantdig.immersive_currency.item;
 
 import net.distantdig.immersive_currency.ImmersiveCurrency;
+import net.distantdig.immersive_currency.item.custom.CoinPouchItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -11,6 +12,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
+
+    public static final Item COIN_POUCH = registerItem("coin_pouch", new CoinPouchItem(new FabricItemSettings()));
 
     public static final Item COPPER_COIN = registerItem("copper_coin", new Item(new FabricItemSettings()));
     public static final Item IRON_COIN = registerItem("iron_coin", new Item(new FabricItemSettings()));
@@ -32,6 +35,8 @@ public class ModItems {
     public static final Item EMERALD_SHARD = registerItem("emerald_shard", new Item(new FabricItemSettings()));
 
     private static void addItemsToItemGroup(FabricItemGroupEntries entries) {
+        entries.add(COIN_POUCH);
+
         entries.add(COPPER_COIN);
         entries.add(IRON_COIN);
         entries.add(GOLD_COIN);

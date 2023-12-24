@@ -44,8 +44,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(larger), conditionsFromItem(larger))
                 .offerTo(exporter, new Identifier(getRecipeName(larger) + "_to_" + getRecipeName(smaller)));
     }
-    private static void coinRecipeJsonBuilder(Item result, Item nugget, Item gem, Consumer<RecipeJsonProvider> exporter) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, result, 1)
+    private static void coinRecipeJsonBuilder(Item currentCoin, Item nugget, Item gem, Item previousCoin, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, currentCoin, 1)
                 .pattern("NNN")
                 .pattern("NEN")
                 .pattern("NNN")
@@ -53,7 +53,22 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('E', gem)
                 .criterion(hasItem(nugget), conditionsFromItem(nugget))
                 .criterion(hasItem(gem), conditionsFromItem(gem))
-                .offerTo(exporter, new Identifier(getRecipeName(result)));
+                .offerTo(exporter, new Identifier(getRecipeName(currentCoin)));
+
+        if (previousCoin != null) {
+            ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, currentCoin, 1)
+                    .pattern("CCC")
+                    .pattern("C C")
+                    .pattern("CCC")
+                    .input('C', previousCoin)
+                    .criterion(hasItem(previousCoin), conditionsFromItem(previousCoin))
+                    .offerTo(exporter, new Identifier(getRecipeName(currentCoin) + "_from_" + getRecipeName(previousCoin)));
+
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, previousCoin, 8)
+                    .input(currentCoin)
+                    .criterion(hasItem(currentCoin), conditionsFromItem(currentCoin))
+                    .offerTo(exporter, new Identifier(getRecipeName(currentCoin) + "_to_" + getRecipeName(previousCoin)));
+        }
     }
 
     public ModRecipeProvider(FabricDataOutput output) {
@@ -62,6 +77,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.COIN_POUCH, 1)
+                .pattern("SLS")
+                .pattern("L L")
+                .pattern("LLL")
+                .input('L', Items.LEATHER)
+                .input('S', Items.STRING)
+                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
+                .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COIN_POUCH)));
+
         offerSmelting(exporter, PURE_COPPER_SMELTABLES, RecipeCategory.MISC, ModItems.PURE_COPPER_NUGGET,
                 0.7f, 200, "pure_copper");
         offerSmelting(exporter, PURE_IRON_SMELTABLES, RecipeCategory.MISC, ModItems.PURE_IRON_NUGGET,
@@ -89,9 +114,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         emeraldCompactingStep(Items.EMERALD, ModItems.EMERALD_CHUNK,exporter);
         emeraldCompactingStep(ModItems.EMERALD_CHUNK, ModItems.EMERALD_SHARD,exporter);
 
-        coinRecipeJsonBuilder(ModItems.COPPER_COIN, ModItems.PURE_COPPER_NUGGET, ModItems.EMERALD_SHARD, exporter);
-        coinRecipeJsonBuilder(ModItems.IRON_COIN, ModItems.PURE_IRON_NUGGET, ModItems.EMERALD_CHUNK, exporter);
-        coinRecipeJsonBuilder(ModItems.GOLD_COIN, ModItems.PURE_GOLD_NUGGET, Items.EMERALD, exporter);
-        coinRecipeJsonBuilder(ModItems.PLATINUM_COIN, ModItems.PURE_PLATINUM_NUGGET, ModItems.LARGE_EMERALD, exporter);
+        coinRecipeJsonBuilder(ModItems.COPPER_COIN, ModItems.PURE_COPPER_NUGGET, ModItems.EMERALD_SHARD, null, exporter);
+        coinRecipeJsonBuilder(ModItems.IRON_COIN, ModItems.PURE_IRON_NUGGET, ModItems.EMERALD_CHUNK, ModItems.COPPER_COIN, exporter);
+        coinRecipeJsonBuilder(ModItems.GOLD_COIN, ModItems.PURE_GOLD_NUGGET, Items.EMERALD, ModItems.IRON_COIN, exporter);
+        coinRecipeJsonBuilder(ModItems.PLATINUM_COIN, ModItems.PURE_PLATINUM_NUGGET, ModItems.LARGE_EMERALD, ModItems.GOLD_COIN, exporter);
     }
 }
