@@ -1,4 +1,6 @@
 {
+  "item.immersive_currency.coin_pouch": "Coin Pouch",
+
   "item.immersive_currency.copper_coin": "Copper Coin",
   "item.immersive_currency.iron_coin": "Iron Coin",
   "item.immersive_currency.gold_coin": "Gold Coin",
@@ -13,6 +15,10 @@
   "item.immersive_currency.pure_iron_nugget": "Pure Iron Nugget",
   "item.immersive_currency.pure_gold_nugget": "Pure Gold Nugget",
   "item.immersive_currency.pure_platinum_nugget": "Pure Platinum Nugget",
+
+  "item.immersive_currency.large_emerald": "Large Emerald",
+  "item.immersive_currency.emerald_chunk": "Emerald Chunk",
+  "item.immersive_currency.emerald_shard": "Emerald Shard",
 
   "block.immersive_currency.pure_copper_ore": "Pure Copper Ore",
   "block.immersive_currency.pure_iron_ore": "Pure Iron Ore",

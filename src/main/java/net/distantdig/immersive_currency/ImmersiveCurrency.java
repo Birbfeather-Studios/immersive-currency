@@ -1,8 +1,8 @@
-package net.distantdig.immersivecurrency;
+package net.distantdig.immersive_currency;
 
-import net.distantdig.immersivecurrency.block.ModBlocks;
-import net.distantdig.immersivecurrency.item.ModItemGroups;
-import net.distantdig.immersivecurrency.item.ModItems;
+import net.distantdig.immersive_currency.block.ModBlocks;
+import net.distantdig.immersive_currency.item.ModItemGroups;
+import net.distantdig.immersive_currency.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;

@@ -1,6 +1,7 @@
-package net.distantdig.immersivecurrency.item;
+package net.distantdig.immersive_currency.item;
 
-import net.distantdig.immersivecurrency.ImmersiveCurrency;
+import net.distantdig.immersive_currency.ImmersiveCurrency;
+import net.distantdig.immersive_currency.item.custom.CoinPouchItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -11,6 +12,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
+
+    public static final Item COIN_POUCH = registerItem("coin_pouch", new CoinPouchItem(new FabricItemSettings()));
 
     public static final Item COPPER_COIN = registerItem("copper_coin", new Item(new FabricItemSettings()));
     public static final Item IRON_COIN = registerItem("iron_coin", new Item(new FabricItemSettings()));
@@ -27,7 +30,13 @@ public class ModItems {
     public static final Item PURE_GOLD_NUGGET = registerItem("pure_gold_nugget", new Item(new FabricItemSettings()));
     public static final Item PURE_PLATINUM_NUGGET = registerItem("pure_platinum_nugget", new Item(new FabricItemSettings()));
 
+    public static final Item LARGE_EMERALD = registerItem("large_emerald", new Item(new FabricItemSettings()));
+    public static final Item EMERALD_CHUNK = registerItem("emerald_chunk", new Item(new FabricItemSettings()));
+    public static final Item EMERALD_SHARD = registerItem("emerald_shard", new Item(new FabricItemSettings()));
+
     private static void addItemsToItemGroup(FabricItemGroupEntries entries) {
+        entries.add(COIN_POUCH);
+
         entries.add(COPPER_COIN);
         entries.add(IRON_COIN);
         entries.add(GOLD_COIN);
@@ -42,6 +51,10 @@ public class ModItems {
         entries.add(PURE_IRON_NUGGET);
         entries.add(PURE_GOLD_NUGGET);
         entries.add(PURE_PLATINUM_NUGGET);
+
+        entries.add(LARGE_EMERALD);
+        entries.add(EMERALD_CHUNK);
+        entries.add(EMERALD_SHARD);
     }
 
     private static Item registerItem(String name, Item item) {

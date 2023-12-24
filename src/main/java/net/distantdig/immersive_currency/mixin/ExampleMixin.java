@@ -1,4 +1,4 @@
-package net.distantdig.immersivecurrency.mixin;
+package net.distantdig.immersive_currency.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
