@@ -45,6 +45,6 @@ public class ModItemGroups {
                     })).build());
 
     public static void registerItemGroups() {
-        ImmersiveCurrency.LOGGER.info("Registering Item Groups for", ImmersiveCurrency.MOD_ID);
+        ImmersiveCurrency.LOGGER.info("Registering Item Groups for " + ImmersiveCurrency.MOD_ID);
     }
 }

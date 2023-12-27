@@ -28,6 +28,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-        ImmersiveCurrency.LOGGER.info("Registering Blocks for", ImmersiveCurrency.MOD_ID);
+        ImmersiveCurrency.LOGGER.info("Registering Blocks for " + ImmersiveCurrency.MOD_ID);
     }
 }

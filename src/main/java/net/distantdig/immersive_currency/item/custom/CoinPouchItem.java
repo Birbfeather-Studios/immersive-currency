@@ -1,5 +1,6 @@
 package net.distantdig.immersive_currency.item.custom;
 
+import net.distantdig.immersive_currency.ImmersiveCurrency;
 import net.distantdig.immersive_currency.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -90,7 +91,39 @@ public class CoinPouchItem extends BundleItem {
                 || stack.getItem().equals(ModItems.PLATINUM_COIN);
     }
 
+    private static ItemStack convertCoin(ItemStack stack) {
+        if (stack.isOf(ModItems.GOLD_COIN)) {
+            int newCount = stack.getCount() / 8;
+            return new ItemStack(ModItems.PLATINUM_COIN, newCount);
+        }
+        if (stack.isOf(ModItems.IRON_COIN)) {
+            int newCount = stack.getCount() / 8;
+            return new ItemStack(ModItems.GOLD_COIN, newCount);
+        }
+        if (stack.isOf(ModItems.COPPER_COIN)) {
+            int newCount = stack.getCount() / 8;
+            return new ItemStack(ModItems.IRON_COIN, newCount);
+        }
+        else {
+            return stack;
+        }
+    }
+
     private static int addToBundle(ItemStack bundle, ItemStack stack) {
+        if (!stack.isOf(ModItems.PLATINUM_COIN) && stack.getCount() >= 8) {
+            ImmersiveCurrency.LOGGER.info("stack before  " + stack);
+            ImmersiveCurrency.LOGGER.info("stack getCount % 8  " + stack.getCount() % 8);
+
+            ItemStack newStack = new ItemStack(stack.getItem(), stack.getCount());
+            ImmersiveCurrency.LOGGER.info("newStack before  " + newStack);
+
+            stack.setCount(stack.getCount() % 8);
+
+            ImmersiveCurrency.LOGGER.info("newStack " + newStack);
+            ImmersiveCurrency.LOGGER.info("stack " + stack);
+            newStack = convertCoin(newStack);
+            addToBundle(bundle, newStack);
+        }
         if (stack.isEmpty() || !checkIfCoin(stack)) {
             return 0;
         }

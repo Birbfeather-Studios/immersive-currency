@@ -61,7 +61,7 @@ public class ModItems {
         return Registry.register(Registries.ITEM, new Identifier(ImmersiveCurrency.MOD_ID, name), item);
     }
     public static void registerModItems() {
-        ImmersiveCurrency.LOGGER.info("Registering Mod Items for", ImmersiveCurrency.MOD_ID);
+        ImmersiveCurrency.LOGGER.info("Registering Mod Items for " + ImmersiveCurrency.MOD_ID);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToItemGroup);
     }
 }
