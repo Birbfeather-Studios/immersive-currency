@@ -5,11 +5,11 @@ import net.distantdig.immersive_currency.item.custom.CoinPouchItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
 
 public class ModItems {
 
@@ -34,34 +34,34 @@ public class ModItems {
     public static final Item EMERALD_CHUNK = registerItem("emerald_chunk", new Item(new FabricItemSettings()));
     public static final Item EMERALD_SHARD = registerItem("emerald_shard", new Item(new FabricItemSettings()));
 
-    private static void addItemsToItemGroup(FabricItemGroupEntries entries) {
-        entries.add(COIN_POUCH);
+    private static void acceptItemsToItemGroup(FabricItemGroupEntries entries) {
+        entries.accept(COIN_POUCH);
 
-        entries.add(COPPER_COIN);
-        entries.add(IRON_COIN);
-        entries.add(GOLD_COIN);
-        entries.add(PLATINUM_COIN);
+        entries.accept(COPPER_COIN);
+        entries.accept(IRON_COIN);
+        entries.accept(GOLD_COIN);
+        entries.accept(PLATINUM_COIN);
 
-        entries.add(PURE_COPPER_INGOT);
-        entries.add(PURE_IRON_INGOT);
-        entries.add(PURE_GOLD_INGOT);
-        entries.add(PURE_PLATINUM_INGOT);
+        entries.accept(PURE_COPPER_INGOT);
+        entries.accept(PURE_IRON_INGOT);
+        entries.accept(PURE_GOLD_INGOT);
+        entries.accept(PURE_PLATINUM_INGOT);
 
-        entries.add(PURE_COPPER_NUGGET);
-        entries.add(PURE_IRON_NUGGET);
-        entries.add(PURE_GOLD_NUGGET);
-        entries.add(PURE_PLATINUM_NUGGET);
+        entries.accept(PURE_COPPER_NUGGET);
+        entries.accept(PURE_IRON_NUGGET);
+        entries.accept(PURE_GOLD_NUGGET);
+        entries.accept(PURE_PLATINUM_NUGGET);
 
-        entries.add(LARGE_EMERALD);
-        entries.add(EMERALD_CHUNK);
-        entries.add(EMERALD_SHARD);
+        entries.accept(LARGE_EMERALD);
+        entries.accept(EMERALD_CHUNK);
+        entries.accept(EMERALD_SHARD);
     }
 
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(ImmersiveCurrency.MOD_ID, name), item);
+        return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(ImmersiveCurrency.MOD_ID, name), item);
     }
     public static void registerModItems() {
         ImmersiveCurrency.LOGGER.info("Registering Mod Items for " + ImmersiveCurrency.MOD_ID);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(ModItems::acceptItemsToItemGroup);
     }
 }
