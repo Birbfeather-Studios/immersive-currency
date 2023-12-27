@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "coins=1": {
+      "model": "immersive_currency:block/gold_coin_1"
+    },
+    "coins=2": {
+      "model": "immersive_currency:block/gold_coin_2"
+    },
+    "coins=3": {
+      "model": "immersive_currency:block/gold_coin_3"
+    },
+    "coins=4": {
+      "model": "immersive_currency:block/gold_coin_4"
+    },
+    "coins=5": {
+      "model": "immersive_currency:block/gold_coin_5"
+    },
+    "coins=6": {
+      "model": "immersive_currency:block/gold_coin_6"
+    },
+    "coins=7": {
+      "model": "immersive_currency:block/gold_coin_7"
+    },
+    "coins=8": {
+      "model": "immersive_currency:block/gold_coin_8"
+    },
+    "coins=9": {
+      "model": "immersive_currency:block/gold_coin_9"
+    },
+    "coins=10": {
+      "model": "immersive_currency:block/gold_coin_10"
+    },
+    "coins=11": {
+      "model": "immersive_currency:block/gold_coin_11"
+    },
+    "coins=12": {
+      "model": "immersive_currency:block/gold_coin_12"
+    },
+    "coins=13": {
+      "model": "immersive_currency:block/gold_coin_13"
+    },
+    "coins=14": {
+      "model": "immersive_currency:block/gold_coin_14"
+    },
+    "coins=15": {
+      "model": "immersive_currency:block/gold_coin_15"
+    },
+    "coins=16": {
+      "model": "immersive_currency:block/gold_coin_16"
+    }
+  }
+}

@@ -25,16 +25,6 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(ModItems.COIN_POUCH, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerators.generateFlatItem(ModItems.COPPER_COIN, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.IRON_COIN, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.GOLD_COIN, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.PLATINUM_COIN, ModelTemplates.FLAT_ITEM);
-
-        itemModelGenerators.generateFlatItem(ModItems.PURE_COPPER_INGOT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.PURE_IRON_INGOT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.PURE_GOLD_INGOT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.PURE_PLATINUM_INGOT, ModelTemplates.FLAT_ITEM);
-
         itemModelGenerators.generateFlatItem(ModItems.PURE_COPPER_NUGGET, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.PURE_IRON_NUGGET, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.PURE_GOLD_NUGGET, ModelTemplates.FLAT_ITEM);

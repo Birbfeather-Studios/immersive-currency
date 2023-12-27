@@ -1,7 +1,7 @@
 package net.distantdig.immersive_currency.item.custom;
 
 import net.distantdig.immersive_currency.ImmersiveCurrency;
-import net.distantdig.immersive_currency.item.ModItems;
+import net.distantdig.immersive_currency.block.ModBlocks;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -88,24 +88,24 @@ public class CoinPouchItem extends BundleItem {
     }
 
     private static boolean checkIfCoin(ItemStack stack) {
-        return stack.getItem().equals(ModItems.COPPER_COIN)
-                || stack.getItem().equals(ModItems.IRON_COIN)
-                || stack.getItem().equals(ModItems.GOLD_COIN)
-                || stack.getItem().equals(ModItems.PLATINUM_COIN);
+        return stack.getItem().equals(ModBlocks.COPPER_COIN)
+                || stack.getItem().equals(ModBlocks.IRON_COIN)
+                || stack.getItem().equals(ModBlocks.GOLD_COIN)
+                || stack.getItem().equals(ModBlocks.PLATINUM_COIN);
     }
 
     private static ItemStack convertCoin(ItemStack stack) {
-        if (stack.is(ModItems.GOLD_COIN)) {
+        if (stack.is(ModBlocks.GOLD_COIN.asItem())) {
             int newCount = stack.getCount() / 8;
-            return new ItemStack(ModItems.PLATINUM_COIN, newCount);
+            return new ItemStack(ModBlocks.PLATINUM_COIN.asItem(), newCount);
         }
-        if (stack.is(ModItems.IRON_COIN)) {
+        if (stack.is(ModBlocks.IRON_COIN.asItem())) {
             int newCount = stack.getCount() / 8;
-            return new ItemStack(ModItems.GOLD_COIN, newCount);
+            return new ItemStack(ModBlocks.GOLD_COIN.asItem(), newCount);
         }
-        if (stack.is(ModItems.COPPER_COIN)) {
+        if (stack.is(ModBlocks.COPPER_COIN.asItem())) {
             int newCount = stack.getCount() / 8;
-            return new ItemStack(ModItems.IRON_COIN, newCount);
+            return new ItemStack(ModBlocks.IRON_COIN, newCount);
         }
         else {
             return stack;
@@ -113,7 +113,7 @@ public class CoinPouchItem extends BundleItem {
     }
 
     private static int addToBundle(ItemStack bundle, ItemStack stack) {
-        if (!stack.is(ModItems.PLATINUM_COIN) && stack.getCount() >= 8) {
+        if (!stack.is(ModBlocks.PLATINUM_COIN.asItem()) && stack.getCount() >= 8) {
             ImmersiveCurrency.LOGGER.info("stack before  " + stack);
             ImmersiveCurrency.LOGGER.info("stack getCount % 8  " + stack.getCount() % 8);
 
