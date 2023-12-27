@@ -1,16 +1,20 @@
 package net.distantdig.immersive_currency.item.custom;
 
+import net.distantdig.immersive_currency.ImmersiveCurrency;
 import net.distantdig.immersive_currency.item.ModItems;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.StackReference;
-import net.minecraft.item.*;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
-import net.minecraft.nbt.NbtList;
-import net.minecraft.screen.slot.Slot;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ClickType;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.SlotAccess;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ClickAction;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.BundleItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -18,22 +22,22 @@ import java.util.stream.Stream;
 public class CoinPouchItem extends BundleItem {
     private static final String ITEMS_KEY = "Items";
 
-    public CoinPouchItem(Settings settings) {
+    public CoinPouchItem(Properties settings) {
         super(settings);
     }
 
     @Override
-    public boolean onStackClicked(ItemStack stack, Slot slot, ClickType clickType, PlayerEntity player) {
-        if (clickType != ClickType.RIGHT) {
+    public boolean overrideStackedOnOther(ItemStack stack, Slot slot, ClickAction clickAction, Player player) {
+        if (clickAction != ClickAction.SECONDARY) {
             return false;
         }
-        ItemStack itemStack = slot.getStack();
+        ItemStack itemStack = slot.getItem();
         if (itemStack.isEmpty()) {
             this.playRemoveOneSound(player);
-            CoinPouchItem.removeFirstStack(stack).ifPresent(removedStack -> CoinPouchItem.addToBundle(stack, slot.insertStack(removedStack)));
+            CoinPouchItem.removeFirstStack(stack).ifPresent(removedStack -> CoinPouchItem.addToBundle(stack, slot.safeInsert(removedStack)));
         } else if (checkIfCoin(itemStack)) {
             int i = (64 - CoinPouchItem.getBundleOccupancy(stack)) / CoinPouchItem.getItemOccupancy(itemStack);
-            int j = CoinPouchItem.addToBundle(stack, slot.takeStackRange(itemStack.getCount(), i, player));
+            int j = CoinPouchItem.addToBundle(stack, slot.safeTake(itemStack.getCount(), i, player));
             if (j > 0) {
                 this.playInsertSound(player);
             }
@@ -42,20 +46,20 @@ public class CoinPouchItem extends BundleItem {
     }
 
     @Override
-    public boolean onClicked(ItemStack stack, ItemStack otherStack, Slot slot, ClickType clickType, PlayerEntity player, StackReference cursorStackReference) {
-        if (clickType != ClickType.RIGHT || !slot.canTakePartial(player)) {
+    public boolean overrideOtherStackedOnMe(ItemStack stack, ItemStack otherStack, Slot slot, ClickAction clickAction, Player player, SlotAccess cursorSlotAccess) {
+        if (clickAction != ClickAction.SECONDARY || !slot.allowModification(player)) {
             return false;
         }
         if (otherStack.isEmpty()) {
             CoinPouchItem.removeFirstStack(stack).ifPresent(itemStack -> {
                 this.playRemoveOneSound(player);
-                cursorStackReference.set(itemStack);
+                cursorSlotAccess.set(itemStack);
             });
         } else {
             int i = CoinPouchItem.addToBundle(stack, otherStack);
             if (i > 0) {
                 this.playInsertSound(player);
-                otherStack.decrement(i);
+                otherStack.shrink(i);
             }
         }
         return true;
@@ -65,22 +69,22 @@ public class CoinPouchItem extends BundleItem {
         return CoinPouchItem.getBundledStacks(stack).mapToInt(itemStack -> CoinPouchItem.getItemOccupancy(itemStack) * itemStack.getCount()).sum();
     }
     private static int getItemOccupancy(ItemStack stack) {
-        NbtCompound nbtCompound;
-        if (stack.isOf(Items.BUNDLE)) {
+        CompoundTag compoundTag;
+        if (stack.is(Items.BUNDLE)) {
             return 4 + CoinPouchItem.getBundleOccupancy(stack);
         }
-        if ((stack.isOf(Items.BEEHIVE) || stack.isOf(Items.BEE_NEST)) && stack.hasNbt() && (nbtCompound = BlockItem.getBlockEntityNbt(stack)) != null && !nbtCompound.getList("Bees", NbtElement.COMPOUND_TYPE).isEmpty()) {
+        if ((stack.is(Items.BEEHIVE) || stack.is(Items.BEE_NEST)) && stack.hasTag() && (compoundTag = BlockItem.getBlockEntityData(stack)) != null && !compoundTag.getList("Bees", Tag.TAG_COMPOUND).isEmpty()) {
             return 64;
         }
-        return 64 / stack.getMaxCount();
+        return 64 / stack.getMaxStackSize();
     }
     private static Stream<ItemStack> getBundledStacks(ItemStack stack) {
-        NbtCompound nbtCompound = stack.getNbt();
-        if (nbtCompound == null) {
+        CompoundTag compoundTag = stack.getTag();
+        if (compoundTag == null) {
             return Stream.empty();
         }
-        NbtList nbtList = nbtCompound.getList(ITEMS_KEY, NbtElement.COMPOUND_TYPE);
-        return nbtList.stream().map(NbtCompound.class::cast).map(ItemStack::fromNbt);
+        ListTag nbtList = compoundTag.getList(ITEMS_KEY, Tag.TAG_COMPOUND);
+        return nbtList.stream().map(CompoundTag.class::cast).map(ItemStack::of);
     }
 
     private static boolean checkIfCoin(ItemStack stack) {
@@ -90,13 +94,45 @@ public class CoinPouchItem extends BundleItem {
                 || stack.getItem().equals(ModItems.PLATINUM_COIN);
     }
 
+    private static ItemStack convertCoin(ItemStack stack) {
+        if (stack.is(ModItems.GOLD_COIN)) {
+            int newCount = stack.getCount() / 8;
+            return new ItemStack(ModItems.PLATINUM_COIN, newCount);
+        }
+        if (stack.is(ModItems.IRON_COIN)) {
+            int newCount = stack.getCount() / 8;
+            return new ItemStack(ModItems.GOLD_COIN, newCount);
+        }
+        if (stack.is(ModItems.COPPER_COIN)) {
+            int newCount = stack.getCount() / 8;
+            return new ItemStack(ModItems.IRON_COIN, newCount);
+        }
+        else {
+            return stack;
+        }
+    }
+
     private static int addToBundle(ItemStack bundle, ItemStack stack) {
+        if (!stack.is(ModItems.PLATINUM_COIN) && stack.getCount() >= 8) {
+            ImmersiveCurrency.LOGGER.info("stack before  " + stack);
+            ImmersiveCurrency.LOGGER.info("stack getCount % 8  " + stack.getCount() % 8);
+
+            ItemStack newStack = new ItemStack(stack.getItem(), stack.getCount());
+            ImmersiveCurrency.LOGGER.info("newStack before  " + newStack);
+
+            stack.setCount(stack.getCount() % 8);
+
+            ImmersiveCurrency.LOGGER.info("newStack " + newStack);
+            ImmersiveCurrency.LOGGER.info("stack " + stack);
+            newStack = convertCoin(newStack);
+            addToBundle(bundle, newStack);
+        }
         if (stack.isEmpty() || !checkIfCoin(stack)) {
             return 0;
         }
-        NbtCompound nbtCompound = bundle.getOrCreateNbt();
-        if (!nbtCompound.contains(ITEMS_KEY)) {
-            nbtCompound.put(ITEMS_KEY, new NbtList());
+        CompoundTag compoundTag = bundle.getOrCreateTag();
+        if (!compoundTag.contains(ITEMS_KEY)) {
+            compoundTag.put(ITEMS_KEY, new ListTag());
         }
         int i = CoinPouchItem.getBundleOccupancy(bundle);
         int j = CoinPouchItem.getItemOccupancy(stack);
@@ -104,55 +140,55 @@ public class CoinPouchItem extends BundleItem {
         if (k == 0) {
             return 0;
         }
-        NbtList nbtList = nbtCompound.getList(ITEMS_KEY, NbtElement.COMPOUND_TYPE);
-        Optional<NbtCompound> optional = CoinPouchItem.canMergeStack(stack, nbtList);
+        ListTag listTag = compoundTag.getList(ITEMS_KEY, Tag.TAG_COMPOUND);
+        Optional<CompoundTag> optional = CoinPouchItem.canMergeStack(stack, listTag);
         if (optional.isPresent()) {
-            NbtCompound nbtCompound2 = optional.get();
-            ItemStack itemStack = ItemStack.fromNbt(nbtCompound2);
-            itemStack.increment(k);
-            itemStack.writeNbt(nbtCompound2);
-            nbtList.remove(nbtCompound2);
-            nbtList.add(0, nbtCompound2);
+            CompoundTag compoundTag2 = optional.get();
+            ItemStack itemStack = ItemStack.of(compoundTag2);
+            itemStack.grow(k);
+            itemStack.save(compoundTag2);
+            listTag.remove(compoundTag2);
+            listTag.add(0, compoundTag2);
         } else {
             ItemStack itemStack2 = stack.copyWithCount(k);
-            NbtCompound nbtCompound3 = new NbtCompound();
-            itemStack2.writeNbt(nbtCompound3);
-            nbtList.add(0, nbtCompound3);
+            CompoundTag compoundTag3 = new CompoundTag();
+            itemStack2.save(compoundTag3);
+            listTag.add(0, compoundTag3);
         }
         return k;
     }
 
-    private static Optional<NbtCompound> canMergeStack(ItemStack stack, NbtList items) {
-        if (stack.isOf(Items.BUNDLE)) {
+    private static Optional<CompoundTag> canMergeStack(ItemStack stack, ListTag items) {
+        if (stack.is(Items.BUNDLE)) {
             return Optional.empty();
         }
-        return items.stream().filter(NbtCompound.class::isInstance).map(NbtCompound.class::cast).filter(item -> ItemStack.canCombine(ItemStack.fromNbt(item), stack)).findFirst();
+        return items.stream().filter(CompoundTag.class::isInstance).map(CompoundTag.class::cast).filter(item -> ItemStack.isSameItemSameTags(ItemStack.of(item), stack)).findFirst();
     }
 
     private static Optional<ItemStack> removeFirstStack(ItemStack stack) {
-        NbtCompound nbtCompound = stack.getOrCreateNbt();
-        if (!nbtCompound.contains(ITEMS_KEY)) {
+        CompoundTag compoundTag = stack.getOrCreateTag();
+        if (!compoundTag.contains(ITEMS_KEY)) {
             return Optional.empty();
         }
-        NbtList nbtList = nbtCompound.getList(ITEMS_KEY, NbtElement.COMPOUND_TYPE);
-        if (nbtList.isEmpty()) {
+        ListTag listTag = compoundTag.getList(ITEMS_KEY, Tag.TAG_COMPOUND);
+        if (listTag.isEmpty()) {
             return Optional.empty();
         }
         boolean i = false;
-        NbtCompound nbtCompound2 = nbtList.getCompound(0);
-        ItemStack itemStack = ItemStack.fromNbt(nbtCompound2);
-        nbtList.remove(0);
-        if (nbtList.isEmpty()) {
-            stack.removeSubNbt(ITEMS_KEY);
+        CompoundTag compoundTag2 = listTag.getCompound(0);
+        ItemStack itemStack = ItemStack.of(compoundTag2);
+        listTag.remove(0);
+        if (listTag.isEmpty()) {
+            stack.removeTagKey(ITEMS_KEY);
         }
         return Optional.of(itemStack);
     }
 
     private void playRemoveOneSound(Entity entity) {
-        entity.playSound(SoundEvents.ITEM_BUNDLE_REMOVE_ONE, 0.8f, 0.8f + entity.getWorld().getRandom().nextFloat() * 0.4f);
+        entity.playSound(SoundEvents.BUNDLE_REMOVE_ONE, 0.8f, 0.8f + entity.level().getRandom().nextFloat() * 0.4f);
     }
 
     private void playInsertSound(Entity entity) {
-        entity.playSound(SoundEvents.ITEM_BUNDLE_INSERT, 0.8f, 0.8f + entity.getWorld().getRandom().nextFloat() * 0.4f);
+        entity.playSound(SoundEvents.BUNDLE_INSERT, 0.8f, 0.8f + entity.level().getRandom().nextFloat() * 0.4f);
     }
 }
