@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "bars=1": {
+      "model": "immersive_currency:block/pure_copper_ingot_1"
+    },
+    "bars=2": {
+      "model": "immersive_currency:block/pure_copper_ingot_2"
+    },
+    "bars=3": {
+      "model": "immersive_currency:block/pure_copper_ingot_3"
+    },
+    "bars=4": {
+      "model": "immersive_currency:block/pure_copper_ingot_4"
+    },
+    "bars=5": {
+      "model": "immersive_currency:block/pure_copper_ingot_5"
+    },
+    "bars=6": {
+      "model": "immersive_currency:block/pure_copper_ingot_6"
+    },
+    "bars=7": {
+      "model": "immersive_currency:block/pure_copper_ingot_7"
+    },
+    "bars=8": {
+      "model": "immersive_currency:block/pure_copper_ingot_8"
+    }
+  }
+}

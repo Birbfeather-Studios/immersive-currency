@@ -1,0 +1,54 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "immersive_currency:block/copper_coin",
+		"particle": "immersive_currency:block/copper_coin"
+	},
+	"elements": [
+		{
+			"from": [6, 0, 9],
+			"to": [10, 2, 13],
+			"faces": {
+				"north": {"uv": [4, 14, 6, 15], "texture": "#0"},
+				"east": {"uv": [14, 4, 16, 5], "texture": "#0"},
+				"south": {"uv": [14, 5, 16, 6], "texture": "#0"},
+				"west": {"uv": [6, 14, 8, 15], "texture": "#0"},
+				"up": {"uv": [6, 14, 4, 12], "texture": "#0"},
+				"down": {"uv": [14, 5, 12, 7], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 0, 3],
+			"to": [6, 2, 7],
+			"faces": {
+				"north": {"uv": [4, 14, 6, 15], "texture": "#0"},
+				"east": {"uv": [14, 4, 16, 5], "texture": "#0"},
+				"south": {"uv": [14, 5, 16, 6], "texture": "#0"},
+				"west": {"uv": [6, 14, 8, 15], "texture": "#0"},
+				"up": {"uv": [6, 14, 4, 12], "texture": "#0"},
+				"down": {"uv": [14, 5, 12, 7], "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 0, 5],
+			"to": [12, 2, 9],
+			"faces": {
+				"north": {"uv": [4, 14, 6, 15], "texture": "#0"},
+				"east": {"uv": [14, 4, 16, 5], "texture": "#0"},
+				"south": {"uv": [14, 5, 16, 6], "texture": "#0"},
+				"west": {"uv": [6, 14, 8, 15], "texture": "#0"},
+				"up": {"uv": [6, 14, 4, 12], "texture": "#0"},
+				"down": {"uv": [14, 5, 12, 7], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "3",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}
