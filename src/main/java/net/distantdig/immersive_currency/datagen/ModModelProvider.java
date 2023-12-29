@@ -27,15 +27,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.COIN_POUCH, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModFluids.COIN_BUCKET, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerators.generateFlatItem(ModItems.COPPER_COIN, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.IRON_COIN, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.GOLD_COIN, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.PLATINUM_COIN, ModelTemplates.FLAT_ITEM);
-
-        itemModelGenerators.generateFlatItem(ModItems.PURE_COPPER_INGOT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.PURE_IRON_INGOT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.PURE_GOLD_INGOT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.PURE_PLATINUM_INGOT, ModelTemplates.FLAT_ITEM);
+//        itemModelGenerators.generateFlatItem(ModBlocks.COPPER_COIN.asItem(), ModelTemplates.FLAT_ITEM);
+//        itemModelGenerators.generateFlatItem(ModBlocks.IRON_COIN.asItem(), ModelTemplates.FLAT_ITEM);
+//        itemModelGenerators.generateFlatItem(ModBlocks.GOLD_COIN.asItem(), ModelTemplates.FLAT_ITEM);
+//        itemModelGenerators.generateFlatItem(ModBlocks.PLATINUM_COIN.asItem(), ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateFlatItem(ModItems.PURE_COPPER_NUGGET, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.PURE_IRON_NUGGET, ModelTemplates.FLAT_ITEM);
