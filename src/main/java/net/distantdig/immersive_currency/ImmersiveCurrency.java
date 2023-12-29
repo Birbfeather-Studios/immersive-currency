@@ -1,6 +1,7 @@
 package net.distantdig.immersive_currency;
 
 import net.distantdig.immersive_currency.block.ModBlocks;
+import net.distantdig.immersive_currency.fluid.ModFluids;
 import net.distantdig.immersive_currency.item.ModItemGroups;
 import net.distantdig.immersive_currency.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -18,5 +19,6 @@ public class ImmersiveCurrency implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModFluids.registerModFluids();
 	}
 }

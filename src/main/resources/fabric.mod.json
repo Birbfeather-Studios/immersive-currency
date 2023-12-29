@@ -19,6 +19,9 @@
 		"main": [
 			"net.distantdig.immersive_currency.ImmersiveCurrency"
 		],
+		"client": [
+			"net.distantdig.immersive_currency.ImmersiveCurrencyClient"
+		],
 		"fabric-datagen": [
 			"net.distantdig.immersive_currency.ImmersiveCurrencyDataGenerator"
 		]
