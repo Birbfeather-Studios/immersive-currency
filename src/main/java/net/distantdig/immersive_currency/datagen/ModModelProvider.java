@@ -1,6 +1,7 @@
 package net.distantdig.immersive_currency.datagen;
 
 import net.distantdig.immersive_currency.block.ModBlocks;
+import net.distantdig.immersive_currency.fluid.ModFluids;
 import net.distantdig.immersive_currency.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -24,6 +25,7 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(ModItems.COIN_POUCH, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModFluids.COIN_BUCKET, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateFlatItem(ModItems.COPPER_COIN, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.IRON_COIN, ModelTemplates.FLAT_ITEM);

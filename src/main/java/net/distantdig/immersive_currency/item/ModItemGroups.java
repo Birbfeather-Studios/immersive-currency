@@ -2,6 +2,7 @@ package net.distantdig.immersive_currency.item;
 
 import net.distantdig.immersive_currency.ImmersiveCurrency;
 import net.distantdig.immersive_currency.block.ModBlocks;
+import net.distantdig.immersive_currency.fluid.ModFluids;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -17,6 +18,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().title(Component.translatable("itemGroup.immersive_coins_group"))
                     .icon(() -> new ItemStack(ModItems.IRON_COIN)).displayItems(((displayContext, entries) -> {
                         entries.accept(ModItems.COIN_POUCH);
+                        entries.accept(ModFluids.COIN_BUCKET);
 
                         entries.accept(ModItems.COPPER_COIN);
                         entries.accept(ModItems.GOLD_COIN);

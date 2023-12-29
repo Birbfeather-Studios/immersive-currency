@@ -10,6 +10,7 @@ public class ImmersiveCurrencyDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModFluidTagProvider::new);
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModLootProvider::new);
 		pack.addProvider(ModModelProvider::new);
