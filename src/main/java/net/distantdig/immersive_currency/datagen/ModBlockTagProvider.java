@@ -21,6 +21,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PURE_GOLD_ORE)
                 .add(ModBlocks.PURE_PLATINUM_ORE);
 
+        getOrCreateTagBuilder(BlockTags.COPPER_ORES)
+                .add(ModBlocks.PURE_COPPER_ORE);
+        getOrCreateTagBuilder(BlockTags.IRON_ORES)
+                .add(ModBlocks.PURE_IRON_ORE);
+        getOrCreateTagBuilder(BlockTags.GOLD_ORES)
+                .add(ModBlocks.PURE_GOLD_ORE);
+
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.PURE_COPPER_ORE)
                 .add(ModBlocks.PURE_IRON_ORE);
