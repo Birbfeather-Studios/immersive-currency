@@ -5,6 +5,39 @@ import net.minecraft.resources.ResourceLocation;
 
 public class ModLootTableModifiers {
 
+    private static final ResourceLocation VILLAGE_ARMORER =
+            new ResourceLocation("minecraft", "chests/village/village_armorer");
+    private static final ResourceLocation VILLAGE_BUTCHER =
+            new ResourceLocation("minecraft", "chests/village/village_butcher");
+    private static final ResourceLocation VILLAGE_CARTOGRAPHER =
+            new ResourceLocation("minecraft", "chests/village/village_cartographer");
+    private static final ResourceLocation VILLAGE_DESERT_HOUSE =
+            new ResourceLocation("minecraft", "chests/village/village_desert_house");
+    private static final ResourceLocation VILLAGE_FISHER =
+            new ResourceLocation("minecraft", "chests/village/village_fisher");
+    private static final ResourceLocation VILLAGE_FLETCHER =
+            new ResourceLocation("minecraft", "chests/village/village_fletcher");
+    private static final ResourceLocation VILLAGE_MASON =
+            new ResourceLocation("minecraft", "chests/village/village_mason");
+    private static final ResourceLocation VILLAGE_PLAINS_HOUSE =
+            new ResourceLocation("minecraft", "chests/village/village_plains_house");
+    private static final ResourceLocation VILLAGE_SAVANNA_HOUSE =
+            new ResourceLocation("minecraft", "chests/village/village_savanna_house");
+    private static final ResourceLocation VILLAGE_SHEPHERD =
+            new ResourceLocation("minecraft", "chests/village/village_shepherd");
+    private static final ResourceLocation VILLAGE_SNOWY_HOUSE =
+            new ResourceLocation("minecraft", "chests/village/village_snowy_house");
+    private static final ResourceLocation VILLAGE_TAIGA_HOUSE =
+            new ResourceLocation("minecraft", "chests/village/village_taiga_house");
+    private static final ResourceLocation VILLAGE_TANNERY =
+            new ResourceLocation("minecraft", "chests/village/village_tannery");
+    private static final ResourceLocation VILLAGE_TEMPLE =
+            new ResourceLocation("minecraft", "chests/village/village_temple");
+    private static final ResourceLocation VILLAGE_TOOLSMITH =
+            new ResourceLocation("minecraft", "chests/village/village_toolsmith");
+    private static final ResourceLocation VILLAGE_WEAPONSMITH =
+            new ResourceLocation("minecraft", "chests/village/village_weaponsmith");
+
     private static final ResourceLocation MINESHAFT_ID =
             new ResourceLocation("minecraft", "chests/abandoned_mineshaft");
     private static final ResourceLocation ANCIENT_CITY_ID =
@@ -44,6 +77,34 @@ public class ModLootTableModifiers {
 
     public static void ModifyLootTables() {
         LootTableEvents.MODIFY.register(((resourceManager, lootManager, id, tableBuilder, source) -> {
+
+            if (VILLAGE_ARMORER.equals(id)
+                    || VILLAGE_TOOLSMITH.equals(id)
+                    || VILLAGE_WEAPONSMITH.equals(id)) {
+                tableBuilder.pool(ModLootTables.coinsLow.build());
+                tableBuilder.pool(ModLootTables.pureIngots.build());
+                tableBuilder.pool(ModLootTables.emeraldsLow.build());
+            }
+            if (VILLAGE_BUTCHER.equals(id)
+                    || VILLAGE_CARTOGRAPHER.equals(id)
+                    || VILLAGE_FISHER.equals(id)
+                    || VILLAGE_FLETCHER.equals(id)
+                    || VILLAGE_MASON.equals(id)
+                    || VILLAGE_SHEPHERD.equals(id)
+                    || VILLAGE_TANNERY.equals(id)
+                    || VILLAGE_TEMPLE.equals(id)) {
+                tableBuilder.pool(ModLootTables.coinsLow.build());
+                tableBuilder.pool(ModLootTables.emeraldsLow.build());
+            }
+            if (VILLAGE_DESERT_HOUSE.equals(id)
+                    || VILLAGE_PLAINS_HOUSE.equals(id)
+                    || VILLAGE_SAVANNA_HOUSE.equals(id)
+                    || VILLAGE_SNOWY_HOUSE.equals(id)
+                    || VILLAGE_TAIGA_HOUSE.equals(id)) {
+                tableBuilder.pool(ModLootTables.coinPouch.build());
+                tableBuilder.pool(ModLootTables.coinsLow.build());
+                tableBuilder.pool(ModLootTables.emeraldsLow.build());
+            }
 
             if (MINESHAFT_ID.equals(id)) {
                 tableBuilder.pool(ModLootTables.pureNuggets.build());
