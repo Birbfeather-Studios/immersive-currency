@@ -2,15 +2,15 @@
   "item.immersive_currency.coin_pouch": "Coin Pouch",
   "item.immersive_currency.coin_bucket": "Coin Bucket",
 
-  "item.immersive_currency.copper_coin": "Copper Coin",
-  "item.immersive_currency.iron_coin": "Iron Coin",
-  "item.immersive_currency.gold_coin": "Gold Coin",
-  "item.immersive_currency.platinum_coin": "Platinum Coin",
+  "block.immersive_currency.copper_coin": "Copper Coin",
+  "block.immersive_currency.iron_coin": "Iron Coin",
+  "block.immersive_currency.gold_coin": "Gold Coin",
+  "block.immersive_currency.platinum_coin": "Platinum Coin",
 
-  "item.immersive_currency.pure_copper_ingot": "Pure Copper Ingot",
-  "item.immersive_currency.pure_iron_ingot": "Pure Iron Ingot",
-  "item.immersive_currency.pure_gold_ingot": "Pure Gold Ingot",
-  "item.immersive_currency.pure_platinum_ingot": "Pure Platinum Ingot",
+  "block.immersive_currency.pure_copper_ingot": "Pure Copper Ingot",
+  "block.immersive_currency.pure_iron_ingot": "Pure Iron Ingot",
+  "block.immersive_currency.pure_gold_ingot": "Pure Gold Ingot",
+  "block.immersive_currency.pure_platinum_ingot": "Pure Platinum Ingot",
 
   "item.immersive_currency.pure_copper_nugget": "Pure Copper Nugget",
   "item.immersive_currency.pure_iron_nugget": "Pure Iron Nugget",
