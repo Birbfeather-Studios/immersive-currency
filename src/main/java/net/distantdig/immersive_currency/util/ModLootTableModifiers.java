@@ -50,6 +50,7 @@ public class ModLootTableModifiers {
                 tableBuilder.pool(ModLootTables.pureIngots.build());
             }
             if (ANCIENT_CITY_ID.equals(id)) {
+                tableBuilder.pool(ModLootTables.coinPouch.build());
                 tableBuilder.pool(ModLootTables.coinsHigh.build());
                 tableBuilder.pool(ModLootTables.pureIngots.build());
                 tableBuilder.pool(ModLootTables.emeraldsLow.build());
@@ -57,6 +58,7 @@ public class ModLootTableModifiers {
             }
             if (BASTION_TREASURE_ID.equals(id)
                     || NETHER_BRIDGE_ID.equals(id)) {
+                tableBuilder.pool(ModLootTables.coinPouch.build());
                 tableBuilder.pool(ModLootTables.coinsLow.build());
                 tableBuilder.pool(ModLootTables.goldOnly.build());
             }
@@ -65,10 +67,12 @@ public class ModLootTableModifiers {
                     || SHIP_TREASURE_ID.equals(id)
                     || STRONGHOLD_CORRIDOR_ID.equals(id)
                     || STRONGHOLD_CROSSING_ID.equals(id)) {
+                tableBuilder.pool(ModLootTables.coinPouch.build());
                 tableBuilder.pool(ModLootTables.coinsLow.build());
                 tableBuilder.pool(ModLootTables.pureIngots.build());
             }
             if (END_CITY_ID.equals(id)) {
+                tableBuilder.pool(ModLootTables.coinPouch.build());
                 tableBuilder.pool(ModLootTables.coinsLow.build());
                 tableBuilder.pool(ModLootTables.coinsHigh.build());
                 tableBuilder.pool(ModLootTables.platOnly.build());
@@ -77,11 +81,13 @@ public class ModLootTableModifiers {
             }
             if (JUNGLE_TEMPLE_ID.equals(id)
                     || DUNGEON_ID.equals(id)) {
+                tableBuilder.pool(ModLootTables.coinPouch.build());
                 tableBuilder.pool(ModLootTables.coinsLow.build());
                 tableBuilder.pool(ModLootTables.pureNuggets.build());
             }
             if (PILLAGER_OUTPOST_ID.equals(id)
                     || WOODLAND_MANSION_ID.equals(id)) {
+                tableBuilder.pool(ModLootTables.coinPouch.build());
                 tableBuilder.pool(ModLootTables.coinsLow.build());
                 tableBuilder.pool(ModLootTables.emeraldsLow.build());
                 tableBuilder.pool(ModLootTables.emeraldsHigh.build());
@@ -89,6 +95,7 @@ public class ModLootTableModifiers {
             if (SPAWN_BONUS_CHEST_ID.equals(id)
                     || UNDERWATER_RUIN_BIG_ID.equals(id)
                     || UNDERWATER_RUIN_SMALL_ID.equals(id)) {
+                tableBuilder.pool(ModLootTables.coinPouch.build());
                 tableBuilder.pool(ModLootTables.coinsLow.build());
             }
             if (RUINED_PORTAL_ID.equals(id)) {

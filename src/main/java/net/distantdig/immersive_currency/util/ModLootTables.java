@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class ModLootTables {
 
+    public static LootPool.Builder coinPouch;
     public static LootPool.Builder pureNuggets;
     public static LootPool.Builder pureIngots;
     public static LootPool.Builder coinsLow;
@@ -66,6 +67,9 @@ public class ModLootTables {
     }
 
     public static void registerLootTables() {
+        coinPouch = getLootPool(ModItems.COIN_POUCH, null,
+                null, null, .1f, 1.0f, 1.0f);
+
         pureNuggets = getLootPool(ModItems.PURE_COPPER_NUGGET, ModItems.PURE_IRON_NUGGET,
                 ModItems.PURE_GOLD_NUGGET, null, .75f, 1.0f, 4.0f);
 
