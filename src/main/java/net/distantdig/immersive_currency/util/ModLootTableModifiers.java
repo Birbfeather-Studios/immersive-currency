@@ -1,7 +1,16 @@
 package net.distantdig.immersive_currency.util;
 
+import net.distantdig.immersive_currency.block.ModBlocks;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ModLootTableModifiers {
 
@@ -74,6 +83,9 @@ public class ModLootTableModifiers {
             new ResourceLocation("minecraft", "chests/underwater_ruin_small");
     private static final ResourceLocation WOODLAND_MANSION_ID =
             new ResourceLocation("minecraft", "chests/woodland_mansion");
+
+    private static final ResourceLocation FISHING_TREASURE =
+            new ResourceLocation("minecraft", "gameplay/fishing/treasure");
 
     public static void ModifyLootTables() {
         LootTableEvents.MODIFY.register(((resourceManager, lootManager, id, tableBuilder, source) -> {
@@ -162,6 +174,19 @@ public class ModLootTableModifiers {
             if (RUINED_PORTAL_ID.equals(id)) {
                 tableBuilder.pool(ModLootTables.goldOnly.build());
             }
+        }));
+
+        LootTableEvents.REPLACE.register(((resourceManager, lootManager, id, original, source) -> {
+            if (FISHING_TREASURE.equals(id)) {
+                List<LootPoolEntryContainer> entries = new ArrayList<>(Arrays.asList(original.pools[0].entries));
+                entries.add(LootItem.lootTableItem(ModBlocks.COPPER_COIN).build());
+                entries.add(LootItem.lootTableItem(ModBlocks.IRON_COIN).build());
+                entries.add(LootItem.lootTableItem(ModBlocks.GOLD_COIN).build());
+
+                LootPool.Builder pool = LootPool.lootPool().with(entries);
+                return LootTable.lootTable().withPool(pool).build();
+            }
+            return null;
         }));
     }
 }
