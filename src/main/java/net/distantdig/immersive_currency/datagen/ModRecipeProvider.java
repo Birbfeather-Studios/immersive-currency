@@ -1,5 +1,6 @@
 package net.distantdig.immersive_currency.datagen;
 
+import net.distantdig.immersive_currency.block.BlockRegister;
 import net.distantdig.immersive_currency.block.ModBlocks;
 import net.distantdig.immersive_currency.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -17,16 +18,16 @@ import java.util.function.Consumer;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
     private static final List<ItemLike> PURE_COPPER_SMELTABLES =java.util.List.of(
-            ModBlocks.PURE_COPPER_ORE
+            BlockRegister.getBlock("pure_copper_ore")
     );
     private static final List<ItemLike> PURE_IRON_SMELTABLES =java.util.List.of(
-            ModBlocks.PURE_IRON_ORE
+            BlockRegister.getBlock("pure_iron_ore")
     );
     private static final List<ItemLike> PURE_GOLD_SMELTABLES =java.util.List.of(
-            ModBlocks.PURE_GOLD_ORE
+            BlockRegister.getBlock("pure_gold_ore")
     );
     private static final List<ItemLike> PURE_PLATINUM_SMELTABLES =java.util.List.of(
-            ModBlocks.PURE_PLATINUM_ORE
+            BlockRegister.getBlock("pure_platinum_ore")
     );
 
     private static void emeraldCompactingStep(ItemLike larger, ItemLike smaller, Consumer<FinishedRecipe> exporter) {

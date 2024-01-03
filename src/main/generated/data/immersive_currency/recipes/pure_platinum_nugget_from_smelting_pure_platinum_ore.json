@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "pure_platinum",
+  "ingredient": {
+    "item": "immersive_currency:pure_platinum_ore"
+  },
+  "result": "immersive_currency:pure_platinum_nugget"
+}
