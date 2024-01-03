@@ -1,6 +1,7 @@
 package net.distantdig.immersive_currency.world;
 
 import net.distantdig.immersive_currency.ImmersiveCurrency;
+import net.distantdig.immersive_currency.block.BlockRegister;
 import net.distantdig.immersive_currency.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -34,20 +35,38 @@ public class ModConfiguredFeatures {
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
         List<OreConfiguration.TargetBlockState> pureCopperOres =
-                List.of(OreConfiguration.target(copperReplaceables, ModBlocks.PURE_COPPER_ORE.defaultBlockState()),
-                        OreConfiguration.target(deepslatecopperReplaceables, ModBlocks.PURE_COPPER_ORE.defaultBlockState())
+                List.of(OreConfiguration.target(copperReplaceables, BlockRegister.getBlock("pure_copper_ore").defaultBlockState()),
+                        OreConfiguration.target(deepslatecopperReplaceables, BlockRegister.getBlock("pure_copper_ore").defaultBlockState())
                 );
         List<OreConfiguration.TargetBlockState> pureIronOres =
-                List.of(OreConfiguration.target(ironReplaceables, ModBlocks.PURE_IRON_ORE.defaultBlockState()),
-                        OreConfiguration.target(deepslateironReplaceables, ModBlocks.PURE_IRON_ORE.defaultBlockState())
+                List.of(OreConfiguration.target(ironReplaceables, ModBlocks.PURE_IRON_INGOT.defaultBlockState()),
+                        OreConfiguration.target(deepslateironReplaceables, ModBlocks.PURE_IRON_INGOT.defaultBlockState())
                 );
         List<OreConfiguration.TargetBlockState> pureGoldOres =
-                List.of(OreConfiguration.target(goldReplaceables, ModBlocks.PURE_GOLD_ORE.defaultBlockState()),
-                        OreConfiguration.target(deepslategoldReplaceables, ModBlocks.PURE_GOLD_ORE.defaultBlockState())
+                List.of(OreConfiguration.target(goldReplaceables, ModBlocks.PURE_GOLD_INGOT.defaultBlockState()),
+                        OreConfiguration.target(deepslategoldReplaceables, ModBlocks.PURE_GOLD_INGOT.defaultBlockState())
                 );
         List<OreConfiguration.TargetBlockState> purePlatinumOres =
-                List.of(OreConfiguration.target(deepslateReplaceables, ModBlocks.PURE_PLATINUM_ORE.defaultBlockState())
+                List.of(OreConfiguration.target(deepslateReplaceables, ModBlocks.PURE_PLATINUM_INGOT.defaultBlockState())
                 );
+        
+        /*
+                List<OreConfiguration.TargetBlockState> pureCopperOres =
+                List.of(OreConfiguration.target(copperReplaceables, BlockRegister.getBlock("pure_copper_ore").defaultBlockState()),
+                        OreConfiguration.target(deepslatecopperReplaceables, BlockRegister.getBlock("pure_copper_ore").defaultBlockState())
+                );
+        List<OreConfiguration.TargetBlockState> pureIronOres =
+                List.of(OreConfiguration.target(ironReplaceables, BlockRegister.getBlock("pure_iron_ore").defaultBlockState()),
+                        OreConfiguration.target(deepslateironReplaceables, BlockRegister.getBlock("pure_iron_ore").defaultBlockState())
+                );
+        List<OreConfiguration.TargetBlockState> pureGoldOres =
+                List.of(OreConfiguration.target(goldReplaceables, BlockRegister.getBlock("pure_gold_ore").defaultBlockState()),
+                        OreConfiguration.target(deepslategoldReplaceables, BlockRegister.getBlock("pure_gold_ore").defaultBlockState())
+                );
+        List<OreConfiguration.TargetBlockState> purePlatinumOres =
+                List.of(OreConfiguration.target(deepslateReplaceables, BlockRegister.getBlock("pure_platinum_ore").defaultBlockState())
+                );
+         */
 
         register(context, PURE_COPPER_ORE_KEY, Feature.ORE, new OreConfiguration(pureCopperOres, 13));
         register(context, PURE_IRON_ORE_KEY, Feature.ORE, new OreConfiguration(pureIronOres, 13));

@@ -23,11 +23,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(BlockRegister.getBlock("pure_platinum_ore"));
 
         getOrCreateTagBuilder(BlockTags.COPPER_ORES)
-                .add(ModBlocks.PURE_COPPER_ORE);
+                .add(BlockRegister.getBlock("pure_copper_ore"));
         getOrCreateTagBuilder(BlockTags.IRON_ORES)
-                .add(ModBlocks.PURE_IRON_ORE);
+                .add(BlockRegister.getBlock("pure_iron_ore"));
         getOrCreateTagBuilder(BlockTags.GOLD_ORES)
-                .add(ModBlocks.PURE_GOLD_ORE);
+                .add(BlockRegister.getBlock("pure_gold_ore"));
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(BlockRegister.getBlock("pure_copper_ore"))

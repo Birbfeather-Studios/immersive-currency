@@ -21,11 +21,9 @@ public class ImmersiveCurrency implements ModInitializer {
 		ModFluids.registerModFluids();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-
 		ModItemGroups.registerItemGroups();
 		ModLootTables.registerLootTables();
 		ModLootTableModifiers.ModifyLootTables();
 		ModOreGen.generateOres();
-
 	}
 }
