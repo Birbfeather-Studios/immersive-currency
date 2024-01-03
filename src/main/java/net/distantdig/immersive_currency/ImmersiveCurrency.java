@@ -4,6 +4,9 @@ import net.distantdig.immersive_currency.block.ModBlocks;
 import net.distantdig.immersive_currency.fluid.ModFluids;
 import net.distantdig.immersive_currency.item.ModItemGroups;
 import net.distantdig.immersive_currency.item.ModItems;
+import net.distantdig.immersive_currency.util.ModLootTableModifiers;
+import net.distantdig.immersive_currency.util.ModLootTables;
+import net.distantdig.immersive_currency.world.gen.ModOreGen;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -18,6 +21,11 @@ public class ImmersiveCurrency implements ModInitializer {
 		ModFluids.registerModFluids();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
 		ModItemGroups.registerItemGroups();
+		ModLootTables.registerLootTables();
+		ModLootTableModifiers.ModifyLootTables();
+		ModOreGen.generateOres();
+
 	}
 }
