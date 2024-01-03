@@ -36,7 +36,7 @@ public abstract class CoinFluid extends FlowingFluid {
 
     @Override
     protected int getDropOff(LevelReader levelReader) {
-        return 3;
+        return 5;
     }
 
     @Override
@@ -111,7 +111,7 @@ public abstract class CoinFluid extends FlowingFluid {
     public static class Still extends CoinFluid {
         @Override
         public int getAmount(FluidState fluidState) {
-            return 7;
+            return 8;
         }
 
         @Override
