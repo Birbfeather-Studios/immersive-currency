@@ -1,5 +1,6 @@
 package net.distantdig.immersive_currency.datagen;
 
+import net.distantdig.immersive_currency.block.BlockRegister;
 import net.distantdig.immersive_currency.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -16,17 +17,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider arg) {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.PURE_COPPER_ORE)
-                .add(ModBlocks.PURE_IRON_ORE)
-                .add(ModBlocks.PURE_GOLD_ORE)
-                .add(ModBlocks.PURE_PLATINUM_ORE);
+                .add(BlockRegister.getBlock("pure_copper_ore"))
+                .add(BlockRegister.getBlock("pure_iron_ore"))
+                .add(BlockRegister.getBlock("pure_gold_ore"))
+                .add(BlockRegister.getBlock("pure_platinum_ore"));
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.PURE_COPPER_ORE)
-                .add(ModBlocks.PURE_IRON_ORE);
+                .add(BlockRegister.getBlock("pure_copper_ore"))
+                .add(BlockRegister.getBlock("pure_iron_ore"));
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.PURE_GOLD_ORE)
-                .add(ModBlocks.PURE_PLATINUM_ORE);
+                .add(BlockRegister.getBlock("pure_gold_ore"))
+                .add(BlockRegister.getBlock("pure_platinum_ore"));
     }
 }

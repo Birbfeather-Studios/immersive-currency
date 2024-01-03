@@ -15,10 +15,9 @@ public class ImmersiveCurrency implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModItemGroups.registerItemGroups();
-
+		ModFluids.registerModFluids();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		ModFluids.registerModFluids();
+		ModItemGroups.registerItemGroups();
 	}
 }

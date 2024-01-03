@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pure_copper_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "immersive_currency:pure_copper_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:pure_copper_nugget_from_blasting_pure_copper_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_pure_copper_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:pure_copper_nugget_from_blasting_pure_copper_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

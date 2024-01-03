@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "immersive_currency:large_emerald"
+    },
+    "N": {
+      "item": "immersive_currency:pure_platinum_nugget"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "NEN",
+    "NNN"
+  ],
+  "result": {
+    "item": "immersive_currency:platinum_coin"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "pure_gold",
+  "ingredient": {
+    "item": "immersive_currency:pure_gold_ore"
+  },
+  "result": "immersive_currency:pure_gold_nugget"
+}
