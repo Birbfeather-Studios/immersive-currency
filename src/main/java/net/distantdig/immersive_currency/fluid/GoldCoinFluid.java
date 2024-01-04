@@ -16,7 +16,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 
-public abstract class CoinFluid extends FlowingFluid {
+public abstract class GoldCoinFluid extends FlowingFluid {
 
     @Override
     protected boolean canConvertToSource(Level level) {
@@ -66,22 +66,22 @@ public abstract class CoinFluid extends FlowingFluid {
 
     @Override
     public Fluid getSource() {
-        return ModFluids.STILL_COIN_FLUID;
+        return ModFluids.STILL_GOLD_COIN_FLUID;
     }
 
     @Override
     public Fluid getFlowing() {
-        return ModFluids.FLOWING_COIN_FLUID;
+        return ModFluids.FLOWING_GOLD_COIN_FLUID;
     }
 
     @Override
     public Item getBucket() {
-        return ModFluids.COIN_BUCKET;
+        return ModFluids.GOLD_COIN_BUCKET;
     }
 
     @Override
     protected BlockState createLegacyBlock(FluidState fluidState) {
-        return ModFluids.COIN_FLUID_BLOCK.defaultBlockState().setValue(BlockStateProperties.LEVEL, getLegacyLevel(fluidState));
+        return ModFluids.GOLD_COIN_FLUID_BLOCK.defaultBlockState().setValue(BlockStateProperties.LEVEL, getLegacyLevel(fluidState));
     }
 
     @Override
@@ -89,7 +89,7 @@ public abstract class CoinFluid extends FlowingFluid {
         return false;
     }
 
-    public static class Flowing extends CoinFluid {
+    public static class Flowing extends GoldCoinFluid {
 
         @Override
         protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {
@@ -108,7 +108,7 @@ public abstract class CoinFluid extends FlowingFluid {
         }
     }
 
-    public static class Still extends CoinFluid {
+    public static class Still extends GoldCoinFluid {
         @Override
         public int getAmount(FluidState fluidState) {
             return 8;

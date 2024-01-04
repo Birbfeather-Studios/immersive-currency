@@ -1,7 +1,6 @@
 package net.distantdig.immersive_currency.datagen;
 
 import net.distantdig.immersive_currency.block.BlockRegister;
-import net.distantdig.immersive_currency.block.ModBlocks;
 import net.distantdig.immersive_currency.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -24,8 +23,11 @@ public class ModLootProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         add(BlockRegister.getBlock("pure_copper_ore"), pureOreDrops(BlockRegister.getBlock("pure_copper_ore"), ModItems.PURE_COPPER_NUGGET, 2.0f, 5.0f));
+        add(BlockRegister.getBlock("pure_deepslate_copper_ore"), pureOreDrops(BlockRegister.getBlock("pure_deepslate_copper_ore"), ModItems.PURE_COPPER_NUGGET, 2.0f, 5.0f));
         add(BlockRegister.getBlock("pure_iron_ore"), pureOreDrops(BlockRegister.getBlock("pure_iron_ore"), ModItems.PURE_IRON_NUGGET, 1.0f, 3.0f));
+        add(BlockRegister.getBlock("pure_deepslate_iron_ore"), pureOreDrops(BlockRegister.getBlock("pure_deepslate_iron_ore"), ModItems.PURE_IRON_NUGGET, 1.0f, 3.0f));
         add(BlockRegister.getBlock("pure_gold_ore"), pureOreDrops(BlockRegister.getBlock("pure_gold_ore"), ModItems.PURE_GOLD_NUGGET, 1.0f, 2.0f));
+        add(BlockRegister.getBlock("pure_deepslate_gold_ore"), pureOreDrops(BlockRegister.getBlock("pure_deepslate_gold_ore"), ModItems.PURE_GOLD_NUGGET, 1.0f, 2.0f));
         add(BlockRegister.getBlock("pure_platinum_ore"), pureOreDrops(BlockRegister.getBlock("pure_platinum_ore"), ModItems.PURE_PLATINUM_NUGGET, 1.0f, 1.0f));
     }
 

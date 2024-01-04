@@ -51,8 +51,11 @@ public class ModBlocks {
     public static void registerModBlocks() {
         //public static final Block PURE_COPPER_ORE = registerBlock("pure_copper_ore", new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE)));
         BlockRegister.registerBlock("pure_copper_ore", Block::new, FabricBlockSettings.copyOf(Blocks.COPPER_ORE));
+        BlockRegister.registerBlock("pure_deepslate_copper_ore", Block::new, FabricBlockSettings.copyOf(Blocks.DEEPSLATE_COPPER_ORE));
         BlockRegister.registerBlock("pure_iron_ore", Block::new, FabricBlockSettings.copyOf(Blocks.IRON_ORE));
+        BlockRegister.registerBlock("pure_deepslate_iron_ore", Block::new, FabricBlockSettings.copyOf(Blocks.DEEPSLATE_IRON_ORE));
         BlockRegister.registerBlock("pure_gold_ore", Block::new, FabricBlockSettings.copyOf(Blocks.GOLD_ORE));
+        BlockRegister.registerBlock("pure_deepslate_gold_ore", Block::new, FabricBlockSettings.copyOf(Blocks.DEEPSLATE_GOLD_ORE));
         BlockRegister.registerBlock("pure_platinum_ore", Block::new, FabricBlockSettings.copyOf(Blocks.GOLD_ORE));
         BlockRegister.registerGildedBlockSet("copper", Block::new, FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK));
         BlockRegister.registerGildedBlockSet("iron", Block::new, FabricBlockSettings.copyOf(Blocks.IRON_BLOCK));

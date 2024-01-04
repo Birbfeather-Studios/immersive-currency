@@ -35,15 +35,15 @@ public class ModConfiguredFeatures {
 
         List<OreConfiguration.TargetBlockState> pureCopperOres =
                 List.of(OreConfiguration.target(copperReplaceables, BlockRegister.getBlock("pure_copper_ore").defaultBlockState()),
-                        OreConfiguration.target(deepslatecopperReplaceables, BlockRegister.getBlock("pure_copper_ore").defaultBlockState())
+                        OreConfiguration.target(deepslatecopperReplaceables, BlockRegister.getBlock("pure_deepslate_copper_ore").defaultBlockState())
                 );
         List<OreConfiguration.TargetBlockState> pureIronOres =
                 List.of(OreConfiguration.target(ironReplaceables, BlockRegister.getBlock("pure_iron_ore").defaultBlockState()),
-                        OreConfiguration.target(deepslateironReplaceables, BlockRegister.getBlock("pure_iron_ore").defaultBlockState())
+                        OreConfiguration.target(deepslateironReplaceables, BlockRegister.getBlock("pure_deepslate_iron_ore").defaultBlockState())
                 );
         List<OreConfiguration.TargetBlockState> pureGoldOres =
                 List.of(OreConfiguration.target(goldReplaceables, BlockRegister.getBlock("pure_gold_ore").defaultBlockState()),
-                        OreConfiguration.target(deepslategoldReplaceables, BlockRegister.getBlock("pure_gold_ore").defaultBlockState())
+                        OreConfiguration.target(deepslategoldReplaceables, BlockRegister.getBlock("pure_deepslate_gold_ore").defaultBlockState())
                 );
         List<OreConfiguration.TargetBlockState> purePlatinumOres =
                 List.of(OreConfiguration.target(deepslateReplaceables, BlockRegister.getBlock("pure_platinum_ore").defaultBlockState())

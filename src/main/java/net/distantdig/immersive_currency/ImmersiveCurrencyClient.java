@@ -13,9 +13,9 @@ public class ImmersiveCurrencyClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_COIN_FLUID, ModFluids.FLOWING_COIN_FLUID, new SimpleFluidRenderHandler(
-                new ResourceLocation("immersive_currency:block/coins_still"),
-                new ResourceLocation("immersive_currency:block/coins_flowing")
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_GOLD_COIN_FLUID, ModFluids.FLOWING_GOLD_COIN_FLUID, new SimpleFluidRenderHandler(
+                new ResourceLocation("immersive_currency:block/gold_coins_still"),
+                new ResourceLocation("immersive_currency:block/gold_coins_flowing")
         ));
 
 //        BlockRenderLayerMap.INSTANCE.putFluids(RenderType.translucent(),
