@@ -1,6 +1,7 @@
 package net.distantdig.immersive_currency.block;
 
 import net.distantdig.immersive_currency.ImmersiveCurrency;
+import net.distantdig.immersive_currency.item.ModItemGroups;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
@@ -55,7 +56,9 @@ public final class BlockRegister {
                 new BlockItem(data.block, new FabricItemSettings())
         );
         blockMap.put(key, data);
-    };
+
+        ModItemGroups.addToBlockGroupList(data.item);
+    }
     public static <T extends BlockEntity> void registerBlockEntity(String key, FabricBlockEntityTypeBuilder.Factory<T> ctor, Block... blocks){
         blockEntityMap.put(key, Registry.register(
                 BuiltInRegistries.BLOCK_ENTITY_TYPE,

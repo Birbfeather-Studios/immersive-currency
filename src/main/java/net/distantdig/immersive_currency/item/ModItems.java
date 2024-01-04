@@ -12,7 +12,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 
-import java.util.List;
 import java.util.Map;
 
 public class ModItems {
@@ -40,21 +39,13 @@ public class ModItems {
     public static final Item EMERALD_SHARD = itemList.get("emerald_shard");
 
     private static void acceptItemsToItemGroup(FabricItemGroupEntries entries) {
-        entries.accept(COIN_POUCH);
-
-        entries.accept(PURE_COPPER_NUGGET);
-        entries.accept(PURE_IRON_NUGGET);
-        entries.accept(PURE_GOLD_NUGGET);
-        entries.accept(PURE_PLATINUM_NUGGET);
-
-        entries.accept(LARGE_EMERALD);
-        entries.accept(EMERALD_CHUNK);
-        entries.accept(EMERALD_SHARD);
+        ModItemGroups.ItemGroupList.forEach(entries::accept);
     }
 
-
     private static Item registerItem(String name, Item item) {
-        return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(ImmersiveCurrency.MOD_ID, name), item);
+        Item itemRegistered = Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(ImmersiveCurrency.MOD_ID, name), item);
+        ModItemGroups.addToItemGroupList(itemRegistered);
+        return itemRegistered;
     }
     public static void registerModItems() {
         ImmersiveCurrency.LOGGER.info("Registering Mod Items for " + ImmersiveCurrency.MOD_ID);
