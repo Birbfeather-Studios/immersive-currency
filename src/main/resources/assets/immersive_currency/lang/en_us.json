@@ -1,6 +1,6 @@
 {
   "item.immersive_currency.coin_pouch": "Coin Pouch",
-  "item.immersive_currency.coin_bucket": "Coin Bucket",
+  "item.immersive_currency.gold_coin_bucket": "Gold Coin Bucket",
 
   "block.immersive_currency.copper_coin": "Copper Coin",
   "block.immersive_currency.iron_coin": "Iron Coin",
@@ -22,10 +22,13 @@
   "item.immersive_currency.emerald_shard": "Emerald Shard",
 
   "block.immersive_currency.pure_copper_ore": "Pure Copper Ore",
+  "block.immersive_currency.pure_deepslate_copper_ore": "Pure Deepslate Copper Ore",
   "block.immersive_currency.pure_iron_ore": "Pure Iron Ore",
+  "block.immersive_currency.pure_deepslate_iron_ore": "Pure Deepslate Iron Ore",
   "block.immersive_currency.pure_gold_ore": "Pure Gold Ore",
+  "block.immersive_currency.pure_deepslate_gold_ore": "Pure Deepslate Gold Ore",
   "block.immersive_currency.pure_platinum_ore": "Pure Platinum Ore",
-  
+
   
   "block.immersive_currency.copper_gilded_creeper_trim": "Copper Gilded Creeper Trim",
   "block.immersive_currency.copper_gilded_curly_trim": "Copper Gilded Curly Trim",

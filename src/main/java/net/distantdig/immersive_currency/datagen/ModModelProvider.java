@@ -30,8 +30,11 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerators) {
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("pure_copper_ore"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("pure_deepslate_copper_ore"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("pure_iron_ore"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("pure_deepslate_iron_ore"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("pure_gold_ore"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("pure_deepslate_gold_ore"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("pure_platinum_ore"));
         generateGildedBlockStateModels(blockStateModelGenerators, "copper");
         generateGildedBlockStateModels(blockStateModelGenerators, "iron");
@@ -42,7 +45,7 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(ModItems.COIN_POUCH, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModFluids.COIN_BUCKET, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModFluids.GOLD_COIN_BUCKET, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateFlatItem(ModBlocks.COPPER_COIN.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModBlocks.IRON_COIN.asItem(), ModelTemplates.FLAT_ITEM);
