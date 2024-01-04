@@ -13,9 +13,21 @@ public class ImmersiveCurrencyClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_COPPER_COIN_FLUID, ModFluids.FLOWING_COPPER_COIN_FLUID, new SimpleFluidRenderHandler(
+                new ResourceLocation("immersive_currency:block/copper_coins_still"),
+                new ResourceLocation("immersive_currency:block/copper_coins_flowing")
+        ));
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_IRON_COIN_FLUID, ModFluids.FLOWING_IRON_COIN_FLUID, new SimpleFluidRenderHandler(
+                new ResourceLocation("immersive_currency:block/iron_coins_still"),
+                new ResourceLocation("immersive_currency:block/iron_coins_flowing")
+        ));
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_GOLD_COIN_FLUID, ModFluids.FLOWING_GOLD_COIN_FLUID, new SimpleFluidRenderHandler(
                 new ResourceLocation("immersive_currency:block/gold_coins_still"),
                 new ResourceLocation("immersive_currency:block/gold_coins_flowing")
+        ));
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_PLATINUM_COIN_FLUID, ModFluids.FLOWING_PLATINUM_COIN_FLUID, new SimpleFluidRenderHandler(
+                new ResourceLocation("immersive_currency:block/platinum_coins_still"),
+                new ResourceLocation("immersive_currency:block/platinum_coins_flowing")
         ));
 
 //        BlockRenderLayerMap.INSTANCE.putFluids(RenderType.translucent(),
