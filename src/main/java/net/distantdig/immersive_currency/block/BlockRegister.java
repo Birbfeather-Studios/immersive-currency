@@ -92,13 +92,13 @@ public final class BlockRegister {
     }
 
     public static <T extends Block> void registerGildedBlockSet(String key, Function<BlockBehaviour.Properties,T> ctor, BlockBehaviour.Properties props) {
+        registerBlock(key + "_gilded_stone", ctor, props);
         registerBlock(key + "_gilded_creeper_trim", ctor, props);
         registerBlock(key + "_gilded_curly_trim", ctor, props);
         registerBlock(key + "_gilded_brick", ctor, props);
         registerBlock(key + "_gilded_bricks", ctor, props);
         registerBlock(key + "_gilded_pillar", ctor, props);
         registerBlock(key + "_gilded_plate", ctor, props);
-        registerBlock(key + "_gilded_stone", ctor, props);
         registerBlock("polished_gilded_" + key, ctor, props);
         registerBlock("chiseled_gilded_" + key, ctor, props);
     }
