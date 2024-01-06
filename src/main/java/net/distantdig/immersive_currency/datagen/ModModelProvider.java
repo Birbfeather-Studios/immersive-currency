@@ -19,6 +19,19 @@ public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
         super(output);
     }
+    final BlockFamily emeraldbrickfamily = BlockFamilies
+            .familyBuilder(BlockRegister.getBlock( "dense_emerald_brick"))
+            .slab(BlockRegister.getBlock("dense_emerald_brick_slab"))
+            .stairs(BlockRegister.getBlock("dense_emerald_brick_stair"))
+            .wall(BlockRegister.getBlock("dense_emerald_brick_wall"))
+            .getFamily();
+    
+    final BlockFamily emeraldgildedfamily = BlockFamilies
+            .familyBuilder(BlockRegister.getBlock( "gilded_emerald_brick"))
+            .slab(BlockRegister.getBlock("gilded_emerald_brick_slab"))
+            .stairs(BlockRegister.getBlock("gilded_emerald_brick_stair"))
+            .wall(BlockRegister.getBlock("gilded_emerald_brick_wall"))
+            .getFamily();
 
     public void generateGildedBlockStateModels(BlockModelGenerators blockModelGenerators, String key) {
         final BlockFamily slabwallstairstonefamily = BlockFamilies.familyBuilder(BlockRegister.getBlock(key + "_gilded_stone")).slab(BlockRegister.getBlock(key + "_gilded_stone_slab")).stairs(BlockRegister.getBlock(key + "_gilded_stone_stair")).wall(BlockRegister.getBlock(key + "_gilded_stone_wall")).getFamily();
@@ -46,13 +59,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_block"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_creeper_trim"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_curly_trim"));
-        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_brick"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_bricks"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_pillar"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_plate"));
-        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("gilded_emerald_brick"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("gilded_emerald_pillar"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("chiseled_dense_emerald"));
+        blockStateModelGenerators.family(emeraldbrickfamily.getBaseBlock()).generateFor(emeraldbrickfamily);
+        blockStateModelGenerators.family(emeraldgildedfamily.getBaseBlock()).generateFor(emeraldgildedfamily);
         generateGildedBlockStateModels(blockStateModelGenerators, "copper");
         generateGildedBlockStateModels(blockStateModelGenerators, "iron");
         generateGildedBlockStateModels(blockStateModelGenerators, "gold");
