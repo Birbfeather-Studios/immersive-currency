@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "immersive_currency:copper_gilded_stone"
-  },
-  "result": "immersive_currency:chiseled_gilded_copper"
-}
