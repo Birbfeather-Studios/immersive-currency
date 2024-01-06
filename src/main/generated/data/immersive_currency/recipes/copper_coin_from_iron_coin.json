@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "immersive_currency:iron_coin"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "immersive_currency:copper_coin"
+  }
+}

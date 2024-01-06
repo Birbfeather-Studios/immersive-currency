@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "N": {
+      "item": "immersive_currency:emerald_chunk"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "N N",
+    "NNN"
+  ],
+  "result": {
+    "item": "minecraft:emerald"
+  },
+  "show_notification": true
+}

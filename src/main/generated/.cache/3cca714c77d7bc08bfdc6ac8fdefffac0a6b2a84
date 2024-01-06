@@ -1,0 +1,7 @@
+// 1.20.1	2024-01-06T14:46:23.3593775	Immersive Currency/Tags for minecraft:block
+2056404a271971c53169d68719e34ad3c129f371 data\minecraft\tags\blocks\needs_stone_tool.json
+3d01fc840b56aaffb9e0528c790e2df4630c202f data\minecraft\tags\blocks\copper_ores.json
+57559e3d13b8f6c5cd744332bf42a5c91a20818b data\minecraft\tags\blocks\mineable\pickaxe.json
+f5b3ed48d66e1b7749e54af9fdf0a5d3504ff1c3 data\minecraft\tags\blocks\needs_iron_tool.json
+030bc9755ed4168236e072d7c09bb9ced3b6747c data\minecraft\tags\blocks\gold_ores.json
+bcc00399bd0846a9dc9790f051e7471936226460 data\minecraft\tags\blocks\iron_ores.json

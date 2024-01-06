@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_platinum_gilded_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "immersive_currency:platinum_gilded_stone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:platinum_gilded_brick_from_platinum_gilded_stone_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_platinum_gilded_stone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:platinum_gilded_brick_from_platinum_gilded_stone_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}
