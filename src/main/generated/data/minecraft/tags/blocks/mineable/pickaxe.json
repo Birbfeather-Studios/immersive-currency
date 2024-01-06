@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "immersive_currency:pure_copper_ore",
+    "immersive_currency:pure_iron_ore",
+    "immersive_currency:pure_gold_ore",
+    "immersive_currency:pure_platinum_ore"
+  ]
+}

@@ -24,13 +24,13 @@ public class BarBlock extends Block implements SimpleWaterloggedBlock {
     public static final IntegerProperty BARS = IntegerProperty.create("bars", 1, 8);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private static final VoxelShape BAR_STACK_1 = Block.box(5, 0, 1, 11, 4, 15);
-    private static final VoxelShape BAR_STACK_2 = Block.box(0,0,0,16,8,16);
-    private static final VoxelShape BAR_STACK_3 = Block.box(0,0,0,16,8,16);
-    private static final VoxelShape BAR_STACK_4 = Block.box(0,0,0,16,12,16);
-    private static final VoxelShape BAR_STACK_5 = Block.box(0,0,0,16,12,16);
-    private static final VoxelShape BAR_STACK_6 = Block.box(0,0,0,16,12,16);
-    private static final VoxelShape BAR_STACK_7 = Block.box(0,0,0,16,16,16);
-    private static final VoxelShape BAR_STACK_8 = Block.box(0,0,0,16,16,16);
+    private static final VoxelShape BAR_STACK_2 = Block.box(1,0,0,14,9,16);
+    private static final VoxelShape BAR_STACK_3 = Block.box(1,0,1,15,8,15);
+    private static final VoxelShape BAR_STACK_4 = Block.box(1,0,1,15,12,15);
+    private static final VoxelShape BAR_STACK_5 = Block.box(1,0,1,15,12,15);
+    private static final VoxelShape BAR_STACK_6 = Block.box(1,0,1,15,12,15);
+    private static final VoxelShape BAR_STACK_7 = Block.box(1,0,1,15,16,15);
+    private static final VoxelShape BAR_STACK_8 = Block.box(1,0,1,15,16,15);
 
 
     public BarBlock(Properties properties){

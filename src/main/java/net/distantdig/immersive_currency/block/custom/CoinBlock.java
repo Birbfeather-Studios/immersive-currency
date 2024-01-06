@@ -17,28 +17,68 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 public class CoinBlock extends Block implements SimpleWaterloggedBlock {
     public static final IntegerProperty COINS = IntegerProperty.create("coins", 1, 16);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    private static final VoxelShape COIN_STACK_1 = Block.box(5, 0, 1, 11, 4, 15);
-    private static final VoxelShape COIN_STACK_2 = Block.box(0,0,0,16,8,16);
-    private static final VoxelShape COIN_STACK_3 = Block.box(0,0,0,16,8,16);
-    private static final VoxelShape COIN_STACK_4 = Block.box(0,0,0,16,12,16);
-    private static final VoxelShape COIN_STACK_5 = Block.box(0,0,0,16,12,16);
-    private static final VoxelShape COIN_STACK_6 = Block.box(0,0,0,16,12,16);
-    private static final VoxelShape COIN_STACK_7 = Block.box(0,0,0,16,16,16);
-    private static final VoxelShape COIN_STACK_8 = Block.box(0,0,0,16,16,16);
-    private static final VoxelShape COIN_STACK_9 = Block.box(0,0,0,16,16,16);
-    private static final VoxelShape COIN_STACK_10 = Block.box(0,0,0,16,16,16);
-    private static final VoxelShape COIN_STACK_11 = Block.box(0,0,0,16,16,16);
-    private static final VoxelShape COIN_STACK_12 = Block.box(0,0,0,16,16,16);
-    private static final VoxelShape COIN_STACK_13 = Block.box(0,0,0,16,16,16);
-    private static final VoxelShape COIN_STACK_14 = Block.box(0,0,0,16,16,16);
-    private static final VoxelShape COIN_STACK_15 = Block.box(0,0,0,16,16,16);
-    private static final VoxelShape COIN_STACK_16 = Block.box(0,0,0,16,16,16);
+    private static final VoxelShape COIN_STACK_1 = Shapes.or(
+            box(8, 0, 4, 12, 2, 8));
+    private static final VoxelShape COIN_STACK_2 = Shapes.or(
+            box(4, 0, 10,8, 2, 14),
+            box(9, 0, 4,13, 2, 8));
+    private static final VoxelShape COIN_STACK_3 = Shapes.or(
+            box(6, 0, 9,10, 2, 13),
+            box(2, 0, 3,6, 2, 7),
+            box(8, 0, 5,12, 2, 9));
+    private static final VoxelShape COIN_STACK_4 = Shapes.or(
+            COIN_STACK_3,
+            box(8, 2, 8,12, 4, 12));
+    private static final VoxelShape COIN_STACK_5 = Shapes.or(
+            box(2, 0, 5,6, 2, 9),
+            box(8, 0, 3,12, 2, 7),
+            box(11, 0, 10,15, 2, 14),
+            box(6, 0, 7,10, 4, 11));
+
+    private static final VoxelShape COIN_STACK_6 = Shapes.or(
+            box(6, 0, 6,10, 6, 10),
+            box(11, 0, 4, 15, 2, 8),
+            box(5, 0, 2,9, 2, 6),
+            box(4, 0, 10, 8, 2, 14));
+    private static final VoxelShape COIN_STACK_7 = Shapes.or(
+            box(6, 0, 6,10, 8, 10),
+            box(10, 0, 5, 14, 2, 9),
+            box(5, 0, 2,9, 2, 6),
+            box(4, 0, 10, 8, 4, 14));
+    private static final VoxelShape COIN_STACK_8 = Shapes.or(
+            box(6, 0, 6, 10, 6, 10),
+            box(10, 0, 6,14, 2, 10),
+            box(6, 0, 2,10, 4, 6),
+            box(2, 0, 6,10, 2, 14),
+            box(2, 2, 10,6, 4, 14));
+    private static final VoxelShape COIN_STACK_9 = Shapes.or(
+            box(6, 0, 6, 10, 8, 10),
+            box(10, 0, 6,14, 2, 10),
+            box(6, 0, 2,10, 6, 6),
+            box(2, 0, 6,10, 2, 14),
+            box(6, 2, 10,10, 4, 14),
+            box(2, 2, 6,2, 4, 10));
+    private static final VoxelShape COIN_STACK_10 = Shapes.or(
+            box(0,0,0,16,10,16));
+    private static final VoxelShape COIN_STACK_11 = Shapes.or(
+            box(0,0,0,16,10,16));
+    private static final VoxelShape COIN_STACK_12 = Shapes.or(
+            box(0,0,0,16,12,16));
+    private static final VoxelShape COIN_STACK_13 = Shapes.or(
+            box(0,0,0,16,12,16));
+    private static final VoxelShape COIN_STACK_14 = Shapes.or(
+            box(0,0,0,16,16,16));
+    private static final VoxelShape COIN_STACK_15 = Shapes.or(
+            box(0,0,0,16,16,16));
+    private static final VoxelShape COIN_STACK_16 = Shapes.or(
+            box(0,0,0,16,16,16));
 
 
     public CoinBlock(Properties properties){

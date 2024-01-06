@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "immersive_currency:emerald_chunk"
+    },
+    "N": {
+      "item": "immersive_currency:pure_iron_nugget"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "NEN",
+    "NNN"
+  ],
+  "result": {
+    "item": "immersive_currency:iron_coin"
+  },
+  "show_notification": true
+}
