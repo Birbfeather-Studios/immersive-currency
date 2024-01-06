@@ -31,6 +31,36 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             BlockRegister.getBlock("pure_platinum_ore")
     );
 
+    private static final List<ItemLike> EMERALD_CUTTER_RESULTS =java.util.List.of(
+            BlockRegister.getBlock("dense_emerald_plate"),
+            BlockRegister.getBlock("chiseled_dense_emerald"),
+            BlockRegister.getBlock("dense_emerald_pillar"),
+            BlockRegister.getBlock("dense_emerald_curly_trim"),
+            BlockRegister.getBlock("dense_emerald_creeper_trim"),
+            BlockRegister.getBlock("dense_emerald_brick"),
+            BlockRegister.getBlock("dense_emerald_bricks"),
+            BlockRegister.getBlock("gilded_emerald_brick"),
+            BlockRegister.getBlock("gilded_emerald_pillar"),
+            BlockRegister.getBlock("dense_emerald_brick_stair"),
+            BlockRegister.getBlock("gilded_emerald_brick_stair"),
+            BlockRegister.getBlock("dense_emerald_brick_slab"),
+            BlockRegister.getBlock("gilded_emerald_brick_slab"),
+            BlockRegister.getBlock("dense_emerald_brick_wall"),
+            BlockRegister.getBlock("gilded_emerald_brick_wall")
+    );
+    private static final List<ItemLike> EMERALD_BRICK_CUTTER_RESULTS =java.util.List.of(
+            BlockRegister.getBlock("chiseled_dense_emerald"),
+            BlockRegister.getBlock("dense_emerald_pillar"),
+            BlockRegister.getBlock("dense_emerald_brick_stair"),
+            BlockRegister.getBlock("dense_emerald_brick_slab"),
+            BlockRegister.getBlock("dense_emerald_brick_wall")
+    );
+    private static final List<ItemLike> EMERALD_GILDED_BRICK_CUTTER_RESULTS =java.util.List.of(
+            BlockRegister.getBlock("gilded_emerald_pillar"),
+            BlockRegister.getBlock("gilded_emerald_brick_stair"),
+            BlockRegister.getBlock("gilded_emerald_brick_slab"),
+            BlockRegister.getBlock("gilded_emerald_brick_wall")
+    );
     private static final List<ItemLike> COPPER_CUTTER_RESULTS =java.util.List.of(
             BlockRegister.getBlock("copper_gilded_creeper_trim"),
             BlockRegister.getBlock("copper_gilded_curly_trim"),
@@ -49,6 +79,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     );
     private static final List<ItemLike> COPPER_BRICK_CUTTER_RESULTS =java.util.List.of(
             BlockRegister.getBlock("chiseled_gilded_copper"),
+            BlockRegister.getBlock("copper_gilded_pillar"),
             BlockRegister.getBlock("copper_gilded_brick_stair"),
             BlockRegister.getBlock("copper_gilded_brick_slab"),
             BlockRegister.getBlock("copper_gilded_brick_wall")
@@ -71,6 +102,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     );
     private static final List<ItemLike> IRON_BRICK_CUTTER_RESULTS =java.util.List.of(
             BlockRegister.getBlock("chiseled_gilded_iron"),
+            BlockRegister.getBlock("iron_gilded_pillar"),
             BlockRegister.getBlock("iron_gilded_brick_stair"),
             BlockRegister.getBlock("iron_gilded_brick_slab"),
             BlockRegister.getBlock("iron_gilded_brick_wall")
@@ -93,6 +125,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     );
     private static final List<ItemLike> GOLD_BRICK_CUTTER_RESULTS =java.util.List.of(
             BlockRegister.getBlock("chiseled_gilded_gold"),
+            BlockRegister.getBlock("gold_gilded_pillar"),
             BlockRegister.getBlock("gold_gilded_brick_stair"),
             BlockRegister.getBlock("gold_gilded_brick_slab"),
             BlockRegister.getBlock("gold_gilded_brick_wall")
@@ -115,6 +148,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     );
     private static final List<ItemLike> PLATINUM_BRICK_CUTTER_RESULTS =java.util.List.of(
             BlockRegister.getBlock("chiseled_gilded_platinum"),
+            BlockRegister.getBlock("platinum_gilded_pillar"),
             BlockRegister.getBlock("platinum_gilded_brick_stair"),
             BlockRegister.getBlock("platinum_gilded_brick_slab"),
             BlockRegister.getBlock("platinum_gilded_brick_wall")
@@ -207,16 +241,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         oreBlasting(exporter, PURE_PLATINUM_SMELTABLES, RecipeCategory.MISC, ModItems.PURE_PLATINUM_NUGGET,
                 0.7f, 200, "pure_platinum");
 
+        gildedRecipeJsonBuilder(BlockRegister.blockMap.get("dense_emerald_block").item, ModItems.EMERALD_CHUNK, Blocks.STONE, exporter);
         gildedRecipeJsonBuilder(BlockRegister.blockMap.get("copper_gilded_stone").item, ModItems.PURE_COPPER_NUGGET, Blocks.STONE, exporter);
         gildedRecipeJsonBuilder(BlockRegister.blockMap.get("iron_gilded_stone").item, ModItems.PURE_IRON_NUGGET, Blocks.STONE, exporter);
         gildedRecipeJsonBuilder(BlockRegister.blockMap.get("gold_gilded_stone").item, ModItems.PURE_GOLD_NUGGET, Blocks.STONE, exporter);
         gildedRecipeJsonBuilder(BlockRegister.blockMap.get("platinum_gilded_stone").item, ModItems.PURE_PLATINUM_NUGGET, Blocks.STONE, exporter);
 
+        EMERALD_CUTTER_RESULTS.forEach(value -> stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, value, BlockRegister.blockMap.get("dense_emerald_block").item));
         COPPER_CUTTER_RESULTS.forEach(value -> stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, value, BlockRegister.blockMap.get("copper_gilded_stone").item));
         IRON_CUTTER_RESULTS.forEach(value -> stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, value, BlockRegister.blockMap.get("iron_gilded_stone").item));
         GOLD_CUTTER_RESULTS.forEach(value -> stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, value, BlockRegister.blockMap.get("gold_gilded_stone").item));
         PLATINUM_CUTTER_RESULTS.forEach(value -> stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, value, BlockRegister.blockMap.get("platinum_gilded_stone").item));
 
+        EMERALD_BRICK_CUTTER_RESULTS.forEach(value -> stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, value, BlockRegister.blockMap.get("dense_emerald_brick").item));
+        EMERALD_GILDED_BRICK_CUTTER_RESULTS.forEach(value -> stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, value, BlockRegister.blockMap.get("gilded_emerald_brick").item));
         COPPER_BRICK_CUTTER_RESULTS.forEach(value -> stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, value, BlockRegister.blockMap.get("copper_gilded_brick").item));
         IRON_BRICK_CUTTER_RESULTS.forEach(value -> stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, value, BlockRegister.blockMap.get("iron_gilded_brick").item));
         GOLD_BRICK_CUTTER_RESULTS.forEach(value -> stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, value, BlockRegister.blockMap.get("gold_gilded_brick").item));
