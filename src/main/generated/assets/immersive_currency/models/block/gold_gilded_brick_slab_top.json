@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "immersive_currency:block/gold_gilded_brick",
+    "side": "immersive_currency:block/gold_gilded_brick",
+    "top": "immersive_currency:block/gold_gilded_brick"
+  }
+}

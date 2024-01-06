@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "immersive_currency:block/platinum_gilded_stone",
+    "side": "immersive_currency:block/platinum_gilded_stone",
+    "top": "immersive_currency:block/platinum_gilded_stone"
+  }
+}

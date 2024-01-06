@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "immersive_currency:block/copper_gilded_stone"
+  }
+}
