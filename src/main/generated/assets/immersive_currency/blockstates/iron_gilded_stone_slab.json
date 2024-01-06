@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersive_currency:block/iron_gilded_stone_slab"
+    },
+    "type=double": {
+      "model": "immersive_currency:block/iron_gilded_stone"
+    },
+    "type=top": {
+      "model": "immersive_currency:block/iron_gilded_stone_slab_top"
+    }
+  }
+}

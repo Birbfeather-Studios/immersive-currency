@@ -1,7 +1,7 @@
-// 1.20.1	2024-01-06T14:46:23.3603755	Immersive Currency/Block Loot Tables
+// 1.20.1	2024-01-07T00:02:09.6791468	Immersive Currency/Block Loot Tables
 fcdb252b6ad50c1e1cd322fb92b37e818800e1a0 data\immersive_currency\loot_tables\blocks\pure_copper_ore.json
-97592daecf7314d947270cb7f5cbc6c9e1a9e912 data\immersive_currency\loot_tables\blocks\pure_iron_ore.json
 71538c089a76e7c275d878b92f92f449513feed6 data\immersive_currency\loot_tables\blocks\pure_gold_ore.json
+97592daecf7314d947270cb7f5cbc6c9e1a9e912 data\immersive_currency\loot_tables\blocks\pure_iron_ore.json
 bff4cfabf2992928698808b297952f4b57db4812 data\immersive_currency\loot_tables\blocks\pure_platinum_ore.json
 d9f3f9b02290240753a6e08e0e634f08d13595c1 data\immersive_currency\loot_tables\blocks\pure_deepslate_iron_ore.json
 63e7fd7f4e23d4c5232cc8c2aa05dda10be6c39e data\immersive_currency\loot_tables\blocks\pure_deepslate_gold_ore.json

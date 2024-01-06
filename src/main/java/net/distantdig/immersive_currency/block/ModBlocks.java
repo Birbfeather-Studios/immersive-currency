@@ -13,6 +13,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.WallBlock;
 
 public class ModBlocks {
 
@@ -57,6 +59,23 @@ public class ModBlocks {
         BlockRegister.registerBlock("pure_gold_ore", Block::new, FabricBlockSettings.copyOf(Blocks.GOLD_ORE));
         BlockRegister.registerBlock("pure_deepslate_gold_ore", Block::new, FabricBlockSettings.copyOf(Blocks.DEEPSLATE_GOLD_ORE));
         BlockRegister.registerBlock("pure_platinum_ore", Block::new, FabricBlockSettings.copyOf(Blocks.GOLD_ORE));
+        BlockRegister.registerBlock("dense_emerald_block", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("dense_emerald_plate", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("chiseled_dense_emerald", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("dense_emerald_pillar", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("dense_emerald_curly_trim", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("dense_emerald_creeper_trim", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("dense_emerald_brick", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("dense_emerald_bricks", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("gilded_emerald_brick", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("gilded_emerald_pillar", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerStairBlock("dense_emerald_brick_stair", "dense_emerald_brick", FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerStairBlock("gilded_emerald_brick_stair", "gilded_emerald_brick", FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("dense_emerald_brick_slab", SlabBlock::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("gilded_emerald_brick_slab", SlabBlock::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("dense_emerald_brick_wall", WallBlock::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+        BlockRegister.registerBlock("gilded_emerald_brick_wall", WallBlock::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
+
         BlockRegister.registerGildedBlockSet("copper", Block::new, FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK));
         BlockRegister.registerGildedBlockSet("iron", Block::new, FabricBlockSettings.copyOf(Blocks.IRON_BLOCK));
         BlockRegister.registerGildedBlockSet("gold", Block::new, FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK));
