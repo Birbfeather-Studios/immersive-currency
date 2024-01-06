@@ -1,7 +1,7 @@
-// 1.20.1	2024-01-06T14:46:23.3613725	Immersive Currency/World Gen
-d68ffc98add37eeab093f53d6aa13f820d171233 data\immersive_currency\worldgen\configured_feature\pure_platinum_ore.json
-78bbdbeb5ab66b08f9b347b4842666feb4f1f70f data\immersive_currency\worldgen\configured_feature\pure_iron_ore.json
+// 1.20.1	2024-01-06T17:40:33.3229443	Immersive Currency/World Gen
 24b0f85412a87285cefa73ae260acd9da46d1daf data\immersive_currency\worldgen\configured_feature\pure_gold_ore.json
+78bbdbeb5ab66b08f9b347b4842666feb4f1f70f data\immersive_currency\worldgen\configured_feature\pure_iron_ore.json
+d68ffc98add37eeab093f53d6aa13f820d171233 data\immersive_currency\worldgen\configured_feature\pure_platinum_ore.json
 1e1483c54dd5af78d03dfd4028933a0f88138bda data\immersive_currency\worldgen\placed_feature\pure_gold_ore_placed.json
 1956a8a4ae71f5d9e9b8a545092ea2d113acca27 data\immersive_currency\worldgen\configured_feature\pure_copper_ore.json
 869d558c78ed4bc7dea6cc8a7e2720f5f20f0359 data\immersive_currency\worldgen\placed_feature\pure_iron_ore_placed.json

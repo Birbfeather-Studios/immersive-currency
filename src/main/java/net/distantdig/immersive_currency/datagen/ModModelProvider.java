@@ -36,6 +36,16 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("pure_gold_ore"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("pure_deepslate_gold_ore"));
         blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("pure_platinum_ore"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_block"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_creeper_trim"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_curly_trim"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_brick"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_bricks"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_pillar"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("dense_emerald_plate"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("gilded_emerald_brick"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("gilded_emerald_pillar"));
+        blockStateModelGenerators.createTrivialCube(BlockRegister.getBlock("chiseled_dense_emerald"));
         generateGildedBlockStateModels(blockStateModelGenerators, "copper");
         generateGildedBlockStateModels(blockStateModelGenerators, "iron");
         generateGildedBlockStateModels(blockStateModelGenerators, "gold");
