@@ -59,6 +59,7 @@ public class ModBlocks {
         BlockRegister.registerBlock("pure_gold_ore", Block::new, FabricBlockSettings.copyOf(Blocks.GOLD_ORE));
         BlockRegister.registerBlock("pure_deepslate_gold_ore", Block::new, FabricBlockSettings.copyOf(Blocks.DEEPSLATE_GOLD_ORE));
         BlockRegister.registerBlock("pure_platinum_ore", Block::new, FabricBlockSettings.copyOf(Blocks.GOLD_ORE));
+
         BlockRegister.registerBlock("dense_emerald_block", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
         BlockRegister.registerBlock("dense_emerald_plate", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));
         BlockRegister.registerBlock("chiseled_dense_emerald", Block::new, FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK));

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "immersive_currency:block/iron_gilded_brick",
-    "side": "immersive_currency:block/iron_gilded_brick",
-    "top": "immersive_currency:block/iron_gilded_brick"
-  }
-}

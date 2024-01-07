@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "immersive_currency:gold_gilded_stone"
-  },
-  "result": "immersive_currency:gold_gilded_creeper_trim"
-}

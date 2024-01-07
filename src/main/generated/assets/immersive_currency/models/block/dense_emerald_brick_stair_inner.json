@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "immersive_currency:block/dense_emerald_brick",
-    "side": "immersive_currency:block/dense_emerald_brick",
-    "top": "immersive_currency:block/dense_emerald_brick"
-  }
-}
