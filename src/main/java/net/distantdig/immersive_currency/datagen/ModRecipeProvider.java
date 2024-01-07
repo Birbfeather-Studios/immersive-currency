@@ -39,14 +39,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             BlockRegister.getBlock("dense_emerald_creeper_trim"),
             BlockRegister.getBlock("dense_emerald_brick"),
             BlockRegister.getBlock("dense_emerald_bricks"),
-            BlockRegister.getBlock("gilded_emerald_brick"),
-            BlockRegister.getBlock("gilded_emerald_pillar"),
             BlockRegister.getBlock("dense_emerald_brick_stair"),
-            BlockRegister.getBlock("gilded_emerald_brick_stair"),
             BlockRegister.getBlock("dense_emerald_brick_slab"),
-            BlockRegister.getBlock("gilded_emerald_brick_slab"),
-            BlockRegister.getBlock("dense_emerald_brick_wall"),
-            BlockRegister.getBlock("gilded_emerald_brick_wall")
+            BlockRegister.getBlock("dense_emerald_brick_wall")
     );
     private static final List<ItemLike> EMERALD_BRICK_CUTTER_RESULTS =java.util.List.of(
             BlockRegister.getBlock("chiseled_dense_emerald"),
@@ -240,6 +235,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 0.7f, 200, "pure_gold");
         oreBlasting(exporter, PURE_PLATINUM_SMELTABLES, RecipeCategory.MISC, ModItems.PURE_PLATINUM_NUGGET,
                 0.7f, 200, "pure_platinum");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlockRegister.blockMap.get("gilded_emerald_brick").item, 1)
+                .pattern(" N ")
+                .pattern("NSN")
+                .pattern(" N ")
+                .define('N', Items.GOLD_NUGGET)
+                .define('S', BlockRegister.blockMap.get("dense_emerald_brick").item)
+                .unlockedBy(getHasName(Items.GOLD_NUGGET), has(Items.GOLD_NUGGET))
+                .unlockedBy(getHasName(BlockRegister.blockMap.get("dense_emerald_brick").item), has(BlockRegister.blockMap.get("dense_emerald_brick").item))
+                .save(exporter, new ResourceLocation(getSimpleRecipeName(BlockRegister.blockMap.get("gilded_emerald_brick").item)));
 
         gildedRecipeJsonBuilder(BlockRegister.blockMap.get("dense_emerald_block").item, ModItems.EMERALD_CHUNK, Blocks.STONE, exporter);
         gildedRecipeJsonBuilder(BlockRegister.blockMap.get("copper_gilded_stone").item, ModItems.PURE_COPPER_NUGGET, Blocks.STONE, exporter);
