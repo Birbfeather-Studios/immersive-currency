@@ -29,7 +29,24 @@
   "block.immersive_currency.pure_deepslate_gold_ore": "Pure Deepslate Gold Ore",
   "block.immersive_currency.pure_platinum_ore": "Pure Platinum Ore",
 
-  
+  "block.immersive_currency.dense_emerald_block": "Dense Emerald Block",
+  "block.immersive_currency.dense_emerald_plate": "Dense Emerald Plate",
+  "block.immersive_currency.chiseled_dense_emerald": "Chiseled Dense Emerald",
+  "block.immersive_currency.dense_emerald_pillar": "Dense Emerald Pillar",
+  "block.immersive_currency.dense_emerald_curly_trim": "Dense Emerald Curly Trim",
+  "block.immersive_currency.dense_emerald_creeper_trim": "Dense Emerald Creeper Trim",
+  "block.immersive_currency.dense_emerald_brick": "Dense Emerald Brick",
+  "block.immersive_currency.dense_emerald_bricks": "Dense Emerald Bricks",
+  "block.immersive_currency.dense_emerald_brick_stair": "Dense Emerald Brick Stair",
+  "block.immersive_currency.dense_emerald_brick_slab": "Dense Emerald Brick Slab",
+  "block.immersive_currency.dense_emerald_brick_wall": "Dense Emerald Brick Slab",
+
+  "block.immersive_currency.gilded_emerald_pillar": "Gilded Emerald Pillar",
+  "block.immersive_currency.gilded_emerald_brick_stair": "Gilded Emerald Brick Stair",
+  "block.immersive_currency.gilded_emerald_brick_slab": "Gilded Emerald Brick Slab",
+  "block.immersive_currency.gilded_emerald_brick_wall": "Gilded Emerald Brick Wall",
+  "block.immersive_currency.gilded_emerald_brick": "Gilded Emerald Brick",
+
   "block.immersive_currency.copper_gilded_creeper_trim": "Copper Gilded Creeper Trim",
   "block.immersive_currency.copper_gilded_curly_trim": "Copper Gilded Curly Trim",
   "block.immersive_currency.copper_gilded_brick": "Copper Gilded Brick",
@@ -39,6 +56,7 @@
   "block.immersive_currency.copper_gilded_stone": "Copper Gilded Stone",
   "block.immersive_currency.polished_gilded_copper": "Polished Gilded Copper",
   "block.immersive_currency.chiseled_gilded_copper": "Chiseled Gilded Copper",
+
   "block.immersive_currency.iron_gilded_creeper_trim": "Iron Gilded Creeper Trim",
   "block.immersive_currency.iron_gilded_curly_trim": "Iron Gilded Curly Trim",
   "block.immersive_currency.iron_gilded_brick": "Iron Gilded Brick",
@@ -48,6 +66,7 @@
   "block.immersive_currency.iron_gilded_stone": "Iron Gilded Stone",
   "block.immersive_currency.polished_gilded_iron": "Polished Gilded Iron",
   "block.immersive_currency.chiseled_gilded_iron": "Chiseled Gilded Iron",
+
   "block.immersive_currency.gold_gilded_creeper_trim": "Gold Gilded Creeper Trim",
   "block.immersive_currency.gold_gilded_curly_trim": "Gold Gilded Curly Trim",
   "block.immersive_currency.gold_gilded_brick": "Gold Gilded Brick",
@@ -57,6 +76,7 @@
   "block.immersive_currency.gold_gilded_stone": "Gold Gilded Stone",
   "block.immersive_currency.polished_gilded_gold": "Polished Gilded Gold",
   "block.immersive_currency.chiseled_gilded_gold": "Chiseled Gilded Gold",
+
   "block.immersive_currency.platinum_gilded_creeper_trim": "Platinum Gilded Creeper Trim",
   "block.immersive_currency.platinum_gilded_curly_trim": "Platinum Gilded Curly Trim",
   "block.immersive_currency.platinum_gilded_brick": "Platinum Gilded Brick",
