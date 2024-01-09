@@ -2,6 +2,7 @@ package net.distantdig.immersive_currency.datagen;
 
 import net.distantdig.immersive_currency.block.BlockRegister;
 import net.distantdig.immersive_currency.block.ModBlocks;
+import net.distantdig.immersive_currency.fluid.ModFluids;
 import net.distantdig.immersive_currency.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -273,6 +274,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         emeraldCompactingStep(ModItems.LARGE_EMERALD, Items.EMERALD,exporter);
         emeraldCompactingStep(Items.EMERALD, ModItems.EMERALD_CHUNK,exporter);
         emeraldCompactingStep(ModItems.EMERALD_CHUNK, ModItems.EMERALD_SHARD,exporter);
+
+        coinRecipeJsonBuilder(ModFluids.COPPER_COIN_BUCKET, ModBlocks.COPPER_COIN, Items.BUCKET, null, exporter);
+        coinRecipeJsonBuilder(ModFluids.IRON_COIN_BUCKET, ModBlocks.IRON_COIN, Items.BUCKET, null, exporter);
+        coinRecipeJsonBuilder(ModFluids.GOLD_COIN_BUCKET, ModBlocks.GOLD_COIN, Items.BUCKET, null, exporter);
+        coinRecipeJsonBuilder(ModFluids.PLATINUM_COIN_BUCKET, ModBlocks.PLATINUM_COIN, Items.BUCKET, null, exporter);
 
         coinRecipeJsonBuilder(ModBlocks.COPPER_COIN, ModItems.PURE_COPPER_NUGGET, ModItems.EMERALD_SHARD, null, exporter);
         coinRecipeJsonBuilder(ModBlocks.IRON_COIN, ModItems.PURE_IRON_NUGGET, ModItems.EMERALD_CHUNK, ModBlocks.COPPER_COIN, exporter);
