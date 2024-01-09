@@ -1,6 +1,10 @@
 {
   "item.immersive_currency.coin_pouch": "Coin Pouch",
+
+  "item.immersive_currency.copper_coin_bucket": "Copper Coin Bucket",
+  "item.immersive_currency.iron_coin_bucket": "Iron Coin Bucket",
   "item.immersive_currency.gold_coin_bucket": "Gold Coin Bucket",
+  "item.immersive_currency.platinum_coin_bucket": "Platinum Coin Bucket",
 
   "block.immersive_currency.copper_coin": "Copper Coin",
   "block.immersive_currency.iron_coin": "Iron Coin",
