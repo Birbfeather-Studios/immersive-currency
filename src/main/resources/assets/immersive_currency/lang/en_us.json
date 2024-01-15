@@ -115,5 +115,14 @@
   "block.immersive_currency.platinum_gilded_stone_wall": "Platinum Gilded Stone Wall",
   "block.immersive_currency.platinum_gilded_brick_wall": "Platinum Gilded Brick Wall",
 
+  "fluid.immersive_currency.copper_coin_fluid": "Copper Coin Pile",
+  "fluid.immersive_currency.flowing_copper_coin_fluid": "Flowing Copper Coin Pile",
+  "fluid.immersive_currency.iron_coin_fluid": "Iron Coin Pile",
+  "fluid.immersive_currency.flowing_iron_coin_fluid": "Flowing Iron Coin Pile",
+  "fluid.immersive_currency.gold_coin_fluid": "Gold Coin Pile",
+  "fluid.immersive_currency.flowing_gold_coin_fluid": "Flowing Gold Coin Pile",
+  "fluid.immersive_currency.platinum_coin_fluid": "Platinum Coin Pile",
+  "fluid.immersive_currency.flowing_platinum_coin_fluid": "Flowing Platinum Coin Pile",
+
   "itemGroup.immersive_coins_group": "Immersive Coins"
 }
