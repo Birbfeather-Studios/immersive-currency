@@ -1,6 +1,5 @@
 package net.distantdig.immersive_currency.item.custom;
 
-import net.distantdig.immersive_currency.ImmersiveCurrency;
 import net.distantdig.immersive_currency.block.ModBlocks;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -11,7 +10,10 @@ import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.BundleItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -52,7 +54,7 @@ public class CoinPouchItem extends BundleItem {
                 this.playRemoveOneSound(player);
                 cursorSlotAccess.set(itemStack);
             });
-        } else {
+        } else if (checkIfCoin(otherStack)){
             int i = CoinPouchItem.addToBundle(stack, otherStack);
             if (i > 0) {
                 this.playInsertSound(player);
@@ -111,16 +113,8 @@ public class CoinPouchItem extends BundleItem {
 
     private static int addToBundle(ItemStack bundle, ItemStack stack) {
         if (!stack.is(ModBlocks.PLATINUM_COIN.asItem()) && stack.getCount() >= 8) {
-            ImmersiveCurrency.LOGGER.info("stack before  " + stack);
-            ImmersiveCurrency.LOGGER.info("stack getCount % 8  " + stack.getCount() % 8);
-
             ItemStack newStack = new ItemStack(stack.getItem(), stack.getCount());
-            ImmersiveCurrency.LOGGER.info("newStack before  " + newStack);
-
             stack.setCount(stack.getCount() % 8);
-
-            ImmersiveCurrency.LOGGER.info("newStack " + newStack);
-            ImmersiveCurrency.LOGGER.info("stack " + stack);
             newStack = convertCoin(newStack);
             addToBundle(bundle, newStack);
         }

@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class ModItems {
     public static Map<String, Item> itemList = Map.of(
-            "coin_pouch", registerItem("coin_pouch", new CoinPouchItem(new FabricItemSettings())),
+            "coin_pouch", registerItem("coin_pouch", new CoinPouchItem(new FabricItemSettings().maxCount(1))),
             "coin_bucket", ModFluids.GOLD_COIN_BUCKET,
             "pure_copper_nugget", registerItem("pure_copper_nugget", new Item(new FabricItemSettings())),
             "pure_iron_nugget", registerItem("pure_iron_nugget", new Item(new FabricItemSettings())),
