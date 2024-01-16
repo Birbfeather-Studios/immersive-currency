@@ -11,22 +11,21 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
 
 public class ModBlocks {
 
-    public static final CoinBlock COPPER_COIN = registerCoinBlock("copper_coin", new CoinBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque()));
-    public static final CoinBlock IRON_COIN = registerCoinBlock("iron_coin", new CoinBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque()));
-    public static final CoinBlock GOLD_COIN = registerCoinBlock("gold_coin", new CoinBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque()));
-    public static final CoinBlock PLATINUM_COIN = registerCoinBlock("platinum_coin", new CoinBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque()));
+    public static final CoinBlock COPPER_COIN = registerCoinBlock("copper_coin", new CoinBlock(FabricBlockSettings.create().nonOpaque().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BELL).strength(1.0F, 1.0F).sound(SoundType.METAL)));
+    public static final CoinBlock IRON_COIN = registerCoinBlock("iron_coin", new CoinBlock(FabricBlockSettings.create().nonOpaque().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(1.0F, 1.0F).sound(SoundType.METAL)));
+    public static final CoinBlock GOLD_COIN = registerCoinBlock("gold_coin", new CoinBlock(FabricBlockSettings.create().nonOpaque().mapColor(MapColor.GOLD).instrument(NoteBlockInstrument.BELL).strength(1.0F, 1.0F).sound(SoundType.METAL)));
+    public static final CoinBlock PLATINUM_COIN = registerCoinBlock("platinum_coin", new CoinBlock(FabricBlockSettings.create().nonOpaque().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(1.0F, 1.0F).sound(SoundType.METAL)));
 
-    public static final BarBlock PURE_COPPER_INGOT = registerBarBlock("pure_copper_ingot", new BarBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque()));
-    public static final BarBlock PURE_IRON_INGOT = registerBarBlock("pure_iron_ingot", new BarBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque()));
-    public static final BarBlock PURE_GOLD_INGOT = registerBarBlock("pure_gold_ingot", new BarBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque()));
-    public static final BarBlock PURE_PLATINUM_INGOT = registerBarBlock("pure_platinum_ingot", new BarBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque()));
+    public static final BarBlock PURE_COPPER_INGOT = registerBarBlock("pure_copper_ingot", new BarBlock(FabricBlockSettings.create().nonOpaque().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BELL).strength(2.0F, 3.0F).sound(SoundType.COPPER)));
+    public static final BarBlock PURE_IRON_INGOT = registerBarBlock("pure_iron_ingot", new BarBlock(FabricBlockSettings.create().nonOpaque().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(2.0F, 3.0F).sound(SoundType.METAL)));
+    public static final BarBlock PURE_GOLD_INGOT = registerBarBlock("pure_gold_ingot", new BarBlock(FabricBlockSettings.create().nonOpaque().mapColor(MapColor.GOLD).instrument(NoteBlockInstrument.BELL).strength(2.0F, 3.0F).sound(SoundType.METAL)));
+    public static final BarBlock PURE_PLATINUM_INGOT = registerBarBlock("pure_platinum_ingot", new BarBlock(FabricBlockSettings.create().nonOpaque().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(2.0F, 3.0F).sound(SoundType.METAL)));
 
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(ImmersiveCurrency.MOD_ID, name),
