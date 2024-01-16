@@ -48,6 +48,103 @@ public class ModLootProvider extends FabricBlockLootTableProvider {
         add(ModBlocks.PURE_IRON_INGOT, (this::createBarDrops));
         add(ModBlocks.PURE_GOLD_INGOT, (this::createBarDrops));
         add(ModBlocks.PURE_PLATINUM_INGOT, (this::createBarDrops));
+
+        add(BlockRegister.getBlock("copper_gilded_stone"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_stone").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_creeper_trim"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_creeper_trim").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_curly_trim"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_curly_trim").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_brick"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_brick").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_bricks"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_bricks").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_pillar"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_pillar").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_plate"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_plate").asItem())));
+                add(BlockRegister.getBlock("polished_gilded_copper"), (this.createSingleItemTable(BlockRegister.getBlock("polished_gilded_copper").asItem())));
+                add(BlockRegister.getBlock("chiseled_gilded_copper"), (this.createSingleItemTable(BlockRegister.getBlock("chiseled_gilded_copper").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_stone_stair"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_stone_stair").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_brick_stair"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_brick_stair").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_stone_slab"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_stone_slab").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_brick_slab"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_brick_slab").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_stone_wall"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_stone_wall").asItem())));
+                add(BlockRegister.getBlock("copper_gilded_brick_wall"), (this.createSingleItemTable(BlockRegister.getBlock("copper_gilded_brick_wall").asItem())));
+
+                add(BlockRegister.getBlock("iron_gilded_stone"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_stone").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_creeper_trim"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_creeper_trim").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_curly_trim"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_curly_trim").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_brick"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_brick").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_bricks"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_bricks").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_pillar"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_pillar").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_plate"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_plate").asItem())));
+                add(BlockRegister.getBlock("polished_gilded_iron"), (this.createSingleItemTable(BlockRegister.getBlock("polished_gilded_iron").asItem())));
+                add(BlockRegister.getBlock("chiseled_gilded_iron"), (this.createSingleItemTable(BlockRegister.getBlock("chiseled_gilded_iron").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_stone_stair"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_stone_stair").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_brick_stair"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_brick_stair").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_stone_slab"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_stone_slab").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_brick_slab"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_brick_slab").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_stone_wall"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_stone_wall").asItem())));
+                add(BlockRegister.getBlock("iron_gilded_brick_wall"), (this.createSingleItemTable(BlockRegister.getBlock("iron_gilded_brick_wall").asItem())));
+
+                add(BlockRegister.getBlock("gold_gilded_stone"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_stone").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_creeper_trim"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_creeper_trim").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_curly_trim"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_curly_trim").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_brick"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_brick").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_bricks"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_bricks").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_pillar"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_pillar").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_plate"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_plate").asItem())));
+                add(BlockRegister.getBlock("polished_gilded_gold"), (this.createSingleItemTable(BlockRegister.getBlock("polished_gilded_gold").asItem())));
+                add(BlockRegister.getBlock("chiseled_gilded_gold"), (this.createSingleItemTable(BlockRegister.getBlock("chiseled_gilded_gold").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_stone_stair"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_stone_stair").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_brick_stair"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_brick_stair").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_stone_slab"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_stone_slab").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_brick_slab"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_brick_slab").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_stone_wall"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_stone_wall").asItem())));
+                add(BlockRegister.getBlock("gold_gilded_brick_wall"), (this.createSingleItemTable(BlockRegister.getBlock("gold_gilded_brick_wall").asItem())));
+
+                add(BlockRegister.getBlock("platinum_gilded_stone"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_stone").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_creeper_trim"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_creeper_trim").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_curly_trim"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_curly_trim").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_brick"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_brick").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_bricks"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_bricks").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_pillar"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_pillar").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_plate"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_plate").asItem())));
+                add(BlockRegister.getBlock("polished_gilded_platinum"), (this.createSingleItemTable(BlockRegister.getBlock("polished_gilded_platinum").asItem())));
+                add(BlockRegister.getBlock("chiseled_gilded_platinum"), (this.createSingleItemTable(BlockRegister.getBlock("chiseled_gilded_platinum").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_stone_stair"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_stone_stair").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_brick_stair"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_brick_stair").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_stone_slab"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_stone_slab").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_brick_slab"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_brick_slab").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_stone_wall"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_stone_wall").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_brick_wall"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_brick_wall").asItem())));
+
+                add(BlockRegister.getBlock("platinum_gilded_stone"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_stone").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_creeper_trim"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_creeper_trim").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_curly_trim"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_curly_trim").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_brick"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_brick").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_bricks"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_bricks").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_pillar"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_pillar").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_plate"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_plate").asItem())));
+                add(BlockRegister.getBlock("polished_gilded_platinum"), (this.createSingleItemTable(BlockRegister.getBlock("polished_gilded_platinum").asItem())));
+                add(BlockRegister.getBlock("chiseled_gilded_platinum"), (this.createSingleItemTable(BlockRegister.getBlock("chiseled_gilded_platinum").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_stone_stair"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_stone_stair").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_brick_stair"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_brick_stair").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_stone_slab"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_stone_slab").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_brick_slab"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_brick_slab").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_stone_wall"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_stone_wall").asItem())));
+                add(BlockRegister.getBlock("platinum_gilded_brick_wall"), (this.createSingleItemTable(BlockRegister.getBlock("platinum_gilded_brick_wall").asItem())));
+
+                add(BlockRegister.getBlock("dense_emerald_block"), (this.createSingleItemTable(BlockRegister.getBlock("dense_emerald_block").asItem())));
+                add(BlockRegister.getBlock("dense_emerald_plate"), (this.createSingleItemTable(BlockRegister.getBlock("dense_emerald_plate").asItem())));
+                add(BlockRegister.getBlock("chiseled_dense_emerald"), (this.createSingleItemTable(BlockRegister.getBlock("chiseled_dense_emerald").asItem())));
+                add(BlockRegister.getBlock("dense_emerald_pillar"), (this.createSingleItemTable(BlockRegister.getBlock("dense_emerald_pillar").asItem())));
+                add(BlockRegister.getBlock("dense_emerald_curly_trim"), (this.createSingleItemTable(BlockRegister.getBlock("dense_emerald_curly_trim").asItem())));
+                add(BlockRegister.getBlock("dense_emerald_creeper_trim"), (this.createSingleItemTable(BlockRegister.getBlock("dense_emerald_creeper_trim").asItem())));
+                add(BlockRegister.getBlock("dense_emerald_brick"), (this.createSingleItemTable(BlockRegister.getBlock("dense_emerald_brick").asItem())));
+                add(BlockRegister.getBlock("dense_emerald_bricks"), (this.createSingleItemTable(BlockRegister.getBlock("dense_emerald_bricks").asItem())));
+                add(BlockRegister.getBlock("gilded_emerald_brick"), (this.createSingleItemTable(BlockRegister.getBlock("gilded_emerald_brick").asItem())));
+                add(BlockRegister.getBlock("gilded_emerald_pillar"), (this.createSingleItemTable(BlockRegister.getBlock("gilded_emerald_pillar").asItem())));
+                add(BlockRegister.getBlock("dense_emerald_brick_stair"), (this.createSingleItemTable(BlockRegister.getBlock("dense_emerald_brick_stair").asItem())));
+                add(BlockRegister.getBlock("gilded_emerald_brick_stair"), (this.createSingleItemTable(BlockRegister.getBlock("gilded_emerald_brick_stair").asItem())));
+                add(BlockRegister.getBlock("dense_emerald_brick_slab"), (this.createSingleItemTable(BlockRegister.getBlock("dense_emerald_brick_slab").asItem())));
+                add(BlockRegister.getBlock("gilded_emerald_brick_slab"), (this.createSingleItemTable(BlockRegister.getBlock("gilded_emerald_brick_slab").asItem())));
+                add(BlockRegister.getBlock("dense_emerald_brick_wall"), (this.createSingleItemTable(BlockRegister.getBlock("dense_emerald_brick_wall").asItem())));
+                add(BlockRegister.getBlock("gilded_emerald_brick_wall"), (this.createSingleItemTable(BlockRegister.getBlock("gilded_emerald_brick_wall").asItem())));
     }
 
     public LootTable.Builder pureOreDrops(Block drop, Item item, float min, float max) {
